@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,15 @@ namespace e_pet_desk_deneme1
 {
     public partial class AnaForm : Form
     {
+
         public AnaForm()
         {
             InitializeComponent();
             AnaPanel uc = new AnaPanel();
             UserControlGetir(uc);
+            Version surum = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            this.Text = "E_Pet_Desk Alpha - v" + surum.ToString();
+            lblSurum.Text = "Alpha - v" +surum.ToString();
         }
 
         private void Buton_MouseEnter(object sender, EventArgs e)
@@ -48,6 +53,12 @@ namespace e_pet_desk_deneme1
         private void RandevularBtn_Click(object sender, EventArgs e)
         {
             Randevular uc = new Randevular();
+            UserControlGetir(uc);
+        }
+
+        private void SahiplerBtn_Click(object sender, EventArgs e)
+        {
+            SahiplerPanel uc = new SahiplerPanel();
             UserControlGetir(uc);
         }
     }

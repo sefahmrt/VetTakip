@@ -41,10 +41,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.roundedPanel2 = new RoundedPanel();
+            this.lblSurum = new System.Windows.Forms.Label();
             this.roundedPanel1 = new RoundedPanel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.roundedPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -61,7 +64,7 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(12, 106);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(188, 563);
+            this.panel2.Size = new System.Drawing.Size(188, 542);
             this.panel2.TabIndex = 1;
             // 
             // HatirlarmalarBtn
@@ -181,6 +184,7 @@
             this.SahiplerBtn.Text = "Sahipler";
             this.SahiplerBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SahiplerBtn.UseVisualStyleBackColor = false;
+            this.SahiplerBtn.Click += new System.EventHandler(this.SahiplerBtn_Click);
             this.SahiplerBtn.MouseEnter += new System.EventHandler(this.Buton_MouseEnter);
             this.SahiplerBtn.MouseLeave += new System.EventHandler(this.Buton_MouseLeave);
             // 
@@ -227,14 +231,40 @@
             this.panelContainer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelContainer.Location = new System.Drawing.Point(206, 106);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1046, 563);
+            this.panelContainer.Size = new System.Drawing.Size(1046, 542);
             this.panelContainer.TabIndex = 3;
+            // 
+            // roundedPanel2
+            // 
+            this.roundedPanel2.BorderColor = System.Drawing.Color.Silver;
+            this.roundedPanel2.BorderRadius = 5;
+            this.roundedPanel2.BorderSize = 1;
+            this.roundedPanel2.Controls.Add(this.lblSurum);
+            this.roundedPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
+            this.roundedPanel2.Location = new System.Drawing.Point(12, 654);
+            this.roundedPanel2.Name = "roundedPanel2";
+            this.roundedPanel2.Size = new System.Drawing.Size(1240, 15);
+            this.roundedPanel2.TabIndex = 5;
+            // 
+            // lblSurum
+            // 
+            this.lblSurum.BackColor = System.Drawing.Color.Transparent;
+            this.lblSurum.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblSurum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblSurum.ForeColor = System.Drawing.Color.Gray;
+            this.lblSurum.Location = new System.Drawing.Point(0, -10);
+            this.lblSurum.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSurum.Name = "lblSurum";
+            this.lblSurum.Size = new System.Drawing.Size(1240, 25);
+            this.lblSurum.TabIndex = 0;
+            this.lblSurum.Text = "label1";
+            this.lblSurum.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.roundedPanel1.BorderColor = System.Drawing.Color.Silver;
-            this.roundedPanel1.BorderRadius = 10;
+            this.roundedPanel1.BorderRadius = 20;
             this.roundedPanel1.BorderSize = 0;
             this.roundedPanel1.Location = new System.Drawing.Point(206, 12);
             this.roundedPanel1.Name = "roundedPanel1";
@@ -247,18 +277,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.roundedPanel2);
             this.Controls.Add(this.roundedPanel1);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AnaForm";
+            this.Text = "E_Pet_Desk";
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.roundedPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -277,5 +310,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelContainer;
         private RoundedPanel roundedPanel1;
+        private System.Windows.Forms.Label lblSurum;
+        private RoundedPanel roundedPanel2;
     }
 }

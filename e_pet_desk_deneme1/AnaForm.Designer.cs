@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
             this.LogoPanel = new RoundedPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.MenuSidePanel = new RoundedPanel();
+            this.lblSurum = new System.Windows.Forms.Label();
             this.AnaSayfaBtn = new RadiusButton();
             this.RandevularBtn = new RadiusButton();
             this.HatirlatmaBtn = new RadiusButton();
@@ -45,67 +46,71 @@
             this.YataklıHBtn = new RadiusButton();
             this.MuayeneBtn = new RadiusButton();
             this.panelContainer = new RoundedPanel();
-            this.FooterPanel = new RoundedPanel();
-            this.lblSurum = new System.Windows.Forms.Label();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MenuSidePanel.SuspendLayout();
-            this.FooterPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoPanel
             // 
-            this.LogoPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.LogoPanel.BorderColor = System.Drawing.Color.Gainsboro;
-            this.LogoPanel.BorderRadius = 10;
-            this.LogoPanel.BorderSize = 1;
+            this.LogoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.LogoPanel.BorderColor = System.Drawing.Color.LightGray;
+            this.LogoPanel.BorderRadius = 0;
+            this.LogoPanel.BorderSize = 5;
+            this.LogoPanel.Controls.Add(this.label2);
             this.LogoPanel.Controls.Add(this.pictureBox1);
             this.LogoPanel.Controls.Add(this.label1);
-            this.LogoPanel.Controls.Add(this.label2);
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
+            this.LogoPanel.Margin = new System.Windows.Forms.Padding(0);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(1264, 90);
+            this.LogoPanel.Size = new System.Drawing.Size(1924, 133);
             this.LogoPanel.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Inter", 15F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
+            this.label2.Location = new System.Drawing.Point(126, 93);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(292, 28);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Veteriner Klinik Takip Sistemi";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(15, 16, 0, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Inter", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Inter", 50F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
-            this.label1.Location = new System.Drawing.Point(80, 19);
+            this.label1.Location = new System.Drawing.Point(115, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 29);
+            this.label1.Size = new System.Drawing.Size(312, 96);
             this.label1.TabIndex = 1;
             this.label1.Text = "VetTakip";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
-            this.label2.Location = new System.Drawing.Point(92, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 22);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Veteriner Klinik Takip Sistemi";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MenuSidePanel
             // 
-            this.MenuSidePanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.MenuSidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.MenuSidePanel.BorderColor = System.Drawing.Color.Gainsboro;
-            this.MenuSidePanel.BorderRadius = 10;
-            this.MenuSidePanel.BorderSize = 1;
+            this.MenuSidePanel.BorderRadius = 0;
+            this.MenuSidePanel.BorderSize = 0;
+            this.MenuSidePanel.Controls.Add(this.lblSurum);
             this.MenuSidePanel.Controls.Add(this.AnaSayfaBtn);
             this.MenuSidePanel.Controls.Add(this.RandevularBtn);
             this.MenuSidePanel.Controls.Add(this.HatirlatmaBtn);
@@ -116,30 +121,46 @@
             this.MenuSidePanel.Controls.Add(this.HayvanlarBtn);
             this.MenuSidePanel.Controls.Add(this.YataklıHBtn);
             this.MenuSidePanel.Controls.Add(this.MuayeneBtn);
-            this.MenuSidePanel.Location = new System.Drawing.Point(0, 96);
+            this.MenuSidePanel.Location = new System.Drawing.Point(0, 133);
+            this.MenuSidePanel.Margin = new System.Windows.Forms.Padding(0);
             this.MenuSidePanel.Name = "MenuSidePanel";
-            this.MenuSidePanel.Size = new System.Drawing.Size(192, 586);
+            this.MenuSidePanel.Size = new System.Drawing.Size(298, 873);
             this.MenuSidePanel.TabIndex = 0;
+            // 
+            // lblSurum
+            // 
+            this.lblSurum.AutoSize = true;
+            this.lblSurum.BackColor = System.Drawing.Color.Transparent;
+            this.lblSurum.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblSurum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblSurum.ForeColor = System.Drawing.Color.Gray;
+            this.lblSurum.Location = new System.Drawing.Point(0, 860);
+            this.lblSurum.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSurum.Name = "lblSurum";
+            this.lblSurum.Size = new System.Drawing.Size(35, 13);
+            this.lblSurum.TabIndex = 0;
+            this.lblSurum.Text = "label1";
+            this.lblSurum.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // AnaSayfaBtn
             // 
             this.AnaSayfaBtn.BackColor = System.Drawing.Color.Transparent;
             this.AnaSayfaBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.AnaSayfaBtn.BorderRadius = 8;
+            this.AnaSayfaBtn.BorderRadius = 10;
             this.AnaSayfaBtn.BorderSize = 0;
             this.AnaSayfaBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.AnaSayfaBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("AnaSayfaBtn.ButtonIcon")));
             this.AnaSayfaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AnaSayfaBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AnaSayfaBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AnaSayfaBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("AnaSayfaBtn.HoverIcon")));
             this.AnaSayfaBtn.IconLocation = IconPosition.Left;
             this.AnaSayfaBtn.IsActive = false;
-            this.AnaSayfaBtn.Location = new System.Drawing.Point(5, 5);
-            this.AnaSayfaBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.AnaSayfaBtn.Location = new System.Drawing.Point(9, 8);
+            this.AnaSayfaBtn.Margin = new System.Windows.Forms.Padding(8);
             this.AnaSayfaBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.AnaSayfaBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.AnaSayfaBtn.Name = "AnaSayfaBtn";
-            this.AnaSayfaBtn.Size = new System.Drawing.Size(182, 40);
+            this.AnaSayfaBtn.Size = new System.Drawing.Size(281, 64);
             this.AnaSayfaBtn.TabIndex = 8;
             this.AnaSayfaBtn.Text = "Ana Sayfa";
             this.AnaSayfaBtn.TextAlign = CustomTextAlign.Left;
@@ -152,21 +173,21 @@
             // 
             this.RandevularBtn.BackColor = System.Drawing.Color.Transparent;
             this.RandevularBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.RandevularBtn.BorderRadius = 8;
+            this.RandevularBtn.BorderRadius = 10;
             this.RandevularBtn.BorderSize = 0;
             this.RandevularBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.RandevularBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("RandevularBtn.ButtonIcon")));
             this.RandevularBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RandevularBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.RandevularBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.RandevularBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("RandevularBtn.HoverIcon")));
             this.RandevularBtn.IconLocation = IconPosition.Left;
             this.RandevularBtn.IsActive = false;
-            this.RandevularBtn.Location = new System.Drawing.Point(5, 53);
-            this.RandevularBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.RandevularBtn.Location = new System.Drawing.Point(9, 80);
+            this.RandevularBtn.Margin = new System.Windows.Forms.Padding(8);
             this.RandevularBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.RandevularBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.RandevularBtn.Name = "RandevularBtn";
-            this.RandevularBtn.Size = new System.Drawing.Size(182, 40);
+            this.RandevularBtn.Size = new System.Drawing.Size(281, 64);
             this.RandevularBtn.TabIndex = 8;
             this.RandevularBtn.Text = "Randevular";
             this.RandevularBtn.TextAlign = CustomTextAlign.Left;
@@ -179,21 +200,21 @@
             // 
             this.HatirlatmaBtn.BackColor = System.Drawing.Color.Transparent;
             this.HatirlatmaBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.HatirlatmaBtn.BorderRadius = 8;
+            this.HatirlatmaBtn.BorderRadius = 10;
             this.HatirlatmaBtn.BorderSize = 0;
             this.HatirlatmaBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.HatirlatmaBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("HatirlatmaBtn.ButtonIcon")));
             this.HatirlatmaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HatirlatmaBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.HatirlatmaBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HatirlatmaBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("HatirlatmaBtn.HoverIcon")));
             this.HatirlatmaBtn.IconLocation = IconPosition.Left;
             this.HatirlatmaBtn.IsActive = false;
-            this.HatirlatmaBtn.Location = new System.Drawing.Point(5, 341);
-            this.HatirlatmaBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.HatirlatmaBtn.Location = new System.Drawing.Point(9, 512);
+            this.HatirlatmaBtn.Margin = new System.Windows.Forms.Padding(8);
             this.HatirlatmaBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.HatirlatmaBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.HatirlatmaBtn.Name = "HatirlatmaBtn";
-            this.HatirlatmaBtn.Size = new System.Drawing.Size(182, 40);
+            this.HatirlatmaBtn.Size = new System.Drawing.Size(281, 64);
             this.HatirlatmaBtn.TabIndex = 8;
             this.HatirlatmaBtn.Text = "Hatırlatma";
             this.HatirlatmaBtn.TextAlign = CustomTextAlign.Left;
@@ -206,21 +227,21 @@
             // 
             this.TakvimBtn.BackColor = System.Drawing.Color.Transparent;
             this.TakvimBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.TakvimBtn.BorderRadius = 8;
+            this.TakvimBtn.BorderRadius = 10;
             this.TakvimBtn.BorderSize = 0;
             this.TakvimBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.TakvimBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("TakvimBtn.ButtonIcon")));
             this.TakvimBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TakvimBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TakvimBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TakvimBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("TakvimBtn.HoverIcon")));
             this.TakvimBtn.IconLocation = IconPosition.Left;
             this.TakvimBtn.IsActive = false;
-            this.TakvimBtn.Location = new System.Drawing.Point(5, 389);
-            this.TakvimBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.TakvimBtn.Location = new System.Drawing.Point(9, 584);
+            this.TakvimBtn.Margin = new System.Windows.Forms.Padding(8);
             this.TakvimBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.TakvimBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.TakvimBtn.Name = "TakvimBtn";
-            this.TakvimBtn.Size = new System.Drawing.Size(182, 40);
+            this.TakvimBtn.Size = new System.Drawing.Size(281, 64);
             this.TakvimBtn.TabIndex = 8;
             this.TakvimBtn.Text = "Takvim";
             this.TakvimBtn.TextAlign = CustomTextAlign.Left;
@@ -233,21 +254,21 @@
             // 
             this.SahiplerBtn.BackColor = System.Drawing.Color.Transparent;
             this.SahiplerBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.SahiplerBtn.BorderRadius = 8;
+            this.SahiplerBtn.BorderRadius = 10;
             this.SahiplerBtn.BorderSize = 0;
             this.SahiplerBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.SahiplerBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("SahiplerBtn.ButtonIcon")));
             this.SahiplerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SahiplerBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SahiplerBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SahiplerBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("SahiplerBtn.HoverIcon")));
             this.SahiplerBtn.IconLocation = IconPosition.Left;
             this.SahiplerBtn.IsActive = false;
-            this.SahiplerBtn.Location = new System.Drawing.Point(5, 101);
-            this.SahiplerBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.SahiplerBtn.Location = new System.Drawing.Point(9, 152);
+            this.SahiplerBtn.Margin = new System.Windows.Forms.Padding(8);
             this.SahiplerBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.SahiplerBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.SahiplerBtn.Name = "SahiplerBtn";
-            this.SahiplerBtn.Size = new System.Drawing.Size(182, 40);
+            this.SahiplerBtn.Size = new System.Drawing.Size(281, 64);
             this.SahiplerBtn.TabIndex = 8;
             this.SahiplerBtn.Text = "Hasta Sahipleri";
             this.SahiplerBtn.TextAlign = CustomTextAlign.Left;
@@ -260,21 +281,21 @@
             // 
             this.MesajlarBtn.BackColor = System.Drawing.Color.Transparent;
             this.MesajlarBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.MesajlarBtn.BorderRadius = 8;
+            this.MesajlarBtn.BorderRadius = 10;
             this.MesajlarBtn.BorderSize = 0;
             this.MesajlarBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.MesajlarBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("MesajlarBtn.ButtonIcon")));
             this.MesajlarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MesajlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MesajlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.MesajlarBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("MesajlarBtn.HoverIcon")));
             this.MesajlarBtn.IconLocation = IconPosition.Left;
             this.MesajlarBtn.IsActive = false;
-            this.MesajlarBtn.Location = new System.Drawing.Point(5, 293);
-            this.MesajlarBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.MesajlarBtn.Location = new System.Drawing.Point(9, 440);
+            this.MesajlarBtn.Margin = new System.Windows.Forms.Padding(8);
             this.MesajlarBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.MesajlarBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.MesajlarBtn.Name = "MesajlarBtn";
-            this.MesajlarBtn.Size = new System.Drawing.Size(182, 40);
+            this.MesajlarBtn.Size = new System.Drawing.Size(281, 64);
             this.MesajlarBtn.TabIndex = 8;
             this.MesajlarBtn.Text = "Mesajlar";
             this.MesajlarBtn.TextAlign = CustomTextAlign.Left;
@@ -287,21 +308,21 @@
             // 
             this.AyarlarBtn.BackColor = System.Drawing.Color.Transparent;
             this.AyarlarBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.AyarlarBtn.BorderRadius = 8;
+            this.AyarlarBtn.BorderRadius = 10;
             this.AyarlarBtn.BorderSize = 0;
             this.AyarlarBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.AyarlarBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("AyarlarBtn.ButtonIcon")));
             this.AyarlarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AyarlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AyarlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AyarlarBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("AyarlarBtn.HoverIcon")));
             this.AyarlarBtn.IconLocation = IconPosition.Left;
             this.AyarlarBtn.IsActive = false;
-            this.AyarlarBtn.Location = new System.Drawing.Point(5, 437);
-            this.AyarlarBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.AyarlarBtn.Location = new System.Drawing.Point(9, 656);
+            this.AyarlarBtn.Margin = new System.Windows.Forms.Padding(8);
             this.AyarlarBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.AyarlarBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.AyarlarBtn.Name = "AyarlarBtn";
-            this.AyarlarBtn.Size = new System.Drawing.Size(182, 40);
+            this.AyarlarBtn.Size = new System.Drawing.Size(281, 64);
             this.AyarlarBtn.TabIndex = 8;
             this.AyarlarBtn.Text = "Ayarlar";
             this.AyarlarBtn.TextAlign = CustomTextAlign.Left;
@@ -314,21 +335,21 @@
             // 
             this.HayvanlarBtn.BackColor = System.Drawing.Color.Transparent;
             this.HayvanlarBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.HayvanlarBtn.BorderRadius = 8;
+            this.HayvanlarBtn.BorderRadius = 10;
             this.HayvanlarBtn.BorderSize = 0;
             this.HayvanlarBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.HayvanlarBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("HayvanlarBtn.ButtonIcon")));
             this.HayvanlarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HayvanlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.HayvanlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HayvanlarBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("HayvanlarBtn.HoverIcon")));
             this.HayvanlarBtn.IconLocation = IconPosition.Left;
             this.HayvanlarBtn.IsActive = false;
-            this.HayvanlarBtn.Location = new System.Drawing.Point(5, 149);
-            this.HayvanlarBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.HayvanlarBtn.Location = new System.Drawing.Point(9, 224);
+            this.HayvanlarBtn.Margin = new System.Windows.Forms.Padding(8);
             this.HayvanlarBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.HayvanlarBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.HayvanlarBtn.Name = "HayvanlarBtn";
-            this.HayvanlarBtn.Size = new System.Drawing.Size(182, 40);
+            this.HayvanlarBtn.Size = new System.Drawing.Size(281, 64);
             this.HayvanlarBtn.TabIndex = 8;
             this.HayvanlarBtn.Text = "Hayvanlar";
             this.HayvanlarBtn.TextAlign = CustomTextAlign.Left;
@@ -341,21 +362,21 @@
             // 
             this.YataklıHBtn.BackColor = System.Drawing.Color.Transparent;
             this.YataklıHBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.YataklıHBtn.BorderRadius = 8;
+            this.YataklıHBtn.BorderRadius = 10;
             this.YataklıHBtn.BorderSize = 0;
             this.YataklıHBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.YataklıHBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("YataklıHBtn.ButtonIcon")));
             this.YataklıHBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.YataklıHBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.YataklıHBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.YataklıHBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("YataklıHBtn.HoverIcon")));
             this.YataklıHBtn.IconLocation = IconPosition.Left;
             this.YataklıHBtn.IsActive = false;
-            this.YataklıHBtn.Location = new System.Drawing.Point(5, 245);
-            this.YataklıHBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.YataklıHBtn.Location = new System.Drawing.Point(9, 368);
+            this.YataklıHBtn.Margin = new System.Windows.Forms.Padding(8);
             this.YataklıHBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.YataklıHBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.YataklıHBtn.Name = "YataklıHBtn";
-            this.YataklıHBtn.Size = new System.Drawing.Size(182, 40);
+            this.YataklıHBtn.Size = new System.Drawing.Size(281, 64);
             this.YataklıHBtn.TabIndex = 8;
             this.YataklıHBtn.Text = "Yataklı Hastalar";
             this.YataklıHBtn.TextAlign = CustomTextAlign.Left;
@@ -368,22 +389,22 @@
             // 
             this.MuayeneBtn.BackColor = System.Drawing.Color.Transparent;
             this.MuayeneBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.MuayeneBtn.BorderRadius = 8;
+            this.MuayeneBtn.BorderRadius = 10;
             this.MuayeneBtn.BorderSize = 0;
             this.MuayeneBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.MuayeneBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("MuayeneBtn.ButtonIcon")));
             this.MuayeneBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MuayeneBtn.Font = new System.Drawing.Font("Inter SemiBold", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MuayeneBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.MuayeneBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("MuayeneBtn.HoverIcon")));
             this.MuayeneBtn.IconLocation = IconPosition.Left;
             this.MuayeneBtn.IsActive = false;
-            this.MuayeneBtn.Location = new System.Drawing.Point(5, 197);
-            this.MuayeneBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.MuayeneBtn.Location = new System.Drawing.Point(9, 296);
+            this.MuayeneBtn.Margin = new System.Windows.Forms.Padding(8);
             this.MuayeneBtn.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.MuayeneBtn.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.MuayeneBtn.Name = "MuayeneBtn";
-            this.MuayeneBtn.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.MuayeneBtn.Size = new System.Drawing.Size(182, 40);
+            this.MuayeneBtn.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.MuayeneBtn.Size = new System.Drawing.Size(281, 64);
             this.MuayeneBtn.TabIndex = 8;
             this.MuayeneBtn.Text = "Muayene Geçmişi";
             this.MuayeneBtn.TextAlign = CustomTextAlign.Left;
@@ -394,61 +415,38 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.panelContainer.BorderColor = System.Drawing.Color.Gainsboro;
-            this.panelContainer.BorderRadius = 10;
-            this.panelContainer.BorderSize = 1;
-            this.panelContainer.Location = new System.Drawing.Point(198, 96);
+            this.panelContainer.BorderRadius = 0;
+            this.panelContainer.BorderSize = 0;
+            this.panelContainer.Location = new System.Drawing.Point(298, 133);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(0, 0, 0, 36);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1066, 565);
+            this.panelContainer.Size = new System.Drawing.Size(1626, 873);
             this.panelContainer.TabIndex = 6;
-            // 
-            // FooterPanel
-            // 
-            this.FooterPanel.BorderColor = System.Drawing.Color.Silver;
-            this.FooterPanel.BorderRadius = 5;
-            this.FooterPanel.BorderSize = 1;
-            this.FooterPanel.Controls.Add(this.lblSurum);
-            this.FooterPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
-            this.FooterPanel.Location = new System.Drawing.Point(198, 667);
-            this.FooterPanel.Name = "FooterPanel";
-            this.FooterPanel.Size = new System.Drawing.Size(1066, 15);
-            this.FooterPanel.TabIndex = 5;
-            // 
-            // lblSurum
-            // 
-            this.lblSurum.BackColor = System.Drawing.Color.Transparent;
-            this.lblSurum.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblSurum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblSurum.ForeColor = System.Drawing.Color.Gray;
-            this.lblSurum.Location = new System.Drawing.Point(0, -10);
-            this.lblSurum.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSurum.Name = "lblSurum";
-            this.lblSurum.Size = new System.Drawing.Size(1066, 25);
-            this.lblSurum.TabIndex = 0;
-            this.lblSurum.Text = "label1";
-            this.lblSurum.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // AnaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1904, 1006);
             this.Controls.Add(this.LogoPanel);
             this.Controls.Add(this.MenuSidePanel);
             this.Controls.Add(this.panelContainer);
-            this.Controls.Add(this.FooterPanel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E_Pet_Desk";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.LogoPanel.ResumeLayout(false);
+            this.LogoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MenuSidePanel.ResumeLayout(false);
-            this.FooterPanel.ResumeLayout(false);
+            this.MenuSidePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -456,7 +454,6 @@
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblSurum;
-        private RoundedPanel FooterPanel;
         private RoundedPanel panelContainer;
         private RoundedPanel MenuSidePanel;
         private System.Windows.Forms.Label label2;

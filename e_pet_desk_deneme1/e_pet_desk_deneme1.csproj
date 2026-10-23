@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>vet_logo.ico</ApplicationIcon>
+    <ApplicationIcon>vettakip.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>AA3E3FC152626BBF0E2E1660AFEC132C567A3D4E</ManifestCertificateThumbprint>
@@ -121,6 +121,9 @@
     </Compile>
     <Compile Include="GirisForm.Designer.cs">
       <DependentUpon>GirisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopShadow.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControls\RadiusButton.cs">
       <SubType>UserControl</SubType>
@@ -207,6 +210,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="vettakip.ico" />
     <Content Include="vet_logo.ico" />
   </ItemGroup>
   <ItemGroup />

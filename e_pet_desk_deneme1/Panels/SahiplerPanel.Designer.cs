@@ -36,17 +36,20 @@
             this.flowPanelSahipler.AutoScroll = true;
             this.flowPanelSahipler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowPanelSahipler.Location = new System.Drawing.Point(0, 0);
+            this.flowPanelSahipler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowPanelSahipler.Name = "flowPanelSahipler";
-            this.flowPanelSahipler.Size = new System.Drawing.Size(1046, 563);
+            this.flowPanelSahipler.Size = new System.Drawing.Size(1072, 592);
             this.flowPanelSahipler.TabIndex = 0;
             // 
             // SahiplerPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowPanelSahipler);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SahiplerPanel";
-            this.Size = new System.Drawing.Size(1046, 563);
+            this.Size = new System.Drawing.Size(1072, 592);
             this.ResumeLayout(false);
 
         }

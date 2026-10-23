@@ -13,6 +13,7 @@ namespace e_pet_desk_deneme1
 {
     public partial class AnaForm : Form
     {
+        private RadiusButton aktifButon = null;
 
         public AnaForm()
         {
@@ -32,10 +33,10 @@ namespace e_pet_desk_deneme1
             userControl.BringToFront();       // Öne getirir
         }
 
-        private void AnaPanelBtn_Click(object sender, EventArgs e)
+        private void AnaSayfaBtn_Click(object sender, EventArgs e)
         {
             AnaPanel uc = new AnaPanel();
-            MenuButonunaTiklandi(AnaPanelBtn, uc); // Hangi buton olduğunu ve hangi UserControl'ün açılacağını söylüyoruz
+            MenuButonunaTiklandi(AnaSayfaBtn, uc); // Hangi buton olduğunu ve hangi UserControl'ün açılacağını söylüyoruz
         }
 
         private void RandevularBtn_Click(object sender, EventArgs e)
@@ -50,21 +51,22 @@ namespace e_pet_desk_deneme1
             MenuButonunaTiklandi(SahiplerBtn, uc);
         }
 
-        private Button aktifButon = null;
 
-        private void MenuButonunaTiklandi(Button yeniButton, UserControl getirilecekUserControl)
+        private void MenuButonunaTiklandi(RadiusButton yeniButton, UserControl getirilecekUserControl)
         {
-            // 1. Eğer daha önce seçilmiş bir buton varsa, rengini normal haline (örneğin beyaza) döndür
+            // 1. Eğer daha önce seçilmiş bir buton varsa, rengini normal haline döndür
             if (aktifButon != null)
             {
-                aktifButon.BackColor = Color.Transparent; // Varsayılan/Normal buton rengin
-                aktifButon.ForeColor = Color.Gray;
+                aktifButon.ButtonColor = Color.Transparent; // RadiusButton'un arkaplan özelliği
+                aktifButon.TextColor = Color.DimGray;          // RadiusButton'un yazı rengi özelliği
+                aktifButon.IsActive = false;
             }
 
-            // 2. Yeni tıklanan butonu "aktif buton" olarak işaretle ve rengini değiştir (örneğin açık gri/mavi)
+            // 2. Yeni tıklanan butonu "aktif buton" olarak işaretle ve rengini değiştir
             aktifButon = yeniButton;
-            aktifButon.BackColor = Color.FromArgb(15, 118, 110); // Seçili (Aktif) buton rengin
-            aktifButon.ForeColor = Color.WhiteSmoke;
+            aktifButon.ButtonColor = Color.FromArgb(15, 118, 110);
+            aktifButon.TextColor = Color.WhiteSmoke;
+            aktifButon.IsActive = true;
 
             // 3. UserControl'ü panelin içinde açma işlemi (Daha önce yazdığımız metod)
             getirilecekUserControl.Dock = DockStyle.Fill;
@@ -76,25 +78,63 @@ namespace e_pet_desk_deneme1
 
         private void MenuBtns_MouseEnter(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            RadiusButton btn = sender as RadiusButton; // Button yerine RadiusButton'a dönüştürüyoruz
 
-            if (btn != null) btn.ForeColor = Color.WhiteSmoke;
+            if (btn != null)
+            {
+                btn.TextColor = Color.WhiteSmoke;
+            }
         }
 
         private void MenuBtns_MouseLeave(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            RadiusButton btn = sender as RadiusButton; // Button yerine RadiusButton'a dönüştürüyoruz
             if (btn != null)
             {
-                // Sadece aktif (seçili) OLMAYAN butonlar transparan olsun
+                // Sadece aktif (seçili) OLMAYAN butonlar eski rengine dönsün
                 if (btn != aktifButon)
                 {
-                    btn.ForeColor = Color.Gray;
+                    btn.TextColor = Color.DimGray;
                 }
             }
         }
 
         private void radiusButton1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HayvanlarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MuayeneBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MesajlarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TakvimBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AyarlarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HatirlatmaBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void YatakliHBtn_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,110 +29,95 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaPanel));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.UstPanel1 = new System.Windows.Forms.Panel();
+            this.UstPanel2 = new System.Windows.Forms.Panel();
+            this.UstPanel3 = new System.Windows.Forms.Panel();
+            this.OrtaPanel = new System.Windows.Forms.Panel();
+            this.AltPanel1 = new System.Windows.Forms.Panel();
+            this.AltPanel2 = new System.Windows.Forms.Panel();
+            this.UstPanel4 = new System.Windows.Forms.Panel();
+            this.SidePanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // UstPanel1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(36, 35, 75, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(331, 137);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.UstPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UstPanel1.BackgroundImage")));
+            this.UstPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UstPanel1.Location = new System.Drawing.Point(36, 35);
+            this.UstPanel1.Margin = new System.Windows.Forms.Padding(36, 0, 75, 50);
+            this.UstPanel1.Name = "UstPanel1";
+            this.UstPanel1.Size = new System.Drawing.Size(331, 137);
+            this.UstPanel1.TabIndex = 4;
             // 
-            // pictureBox2
+            // UstPanel2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(434, 35);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0, 35, 75, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(331, 137);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.UstPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UstPanel2.BackgroundImage")));
+            this.UstPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UstPanel2.Location = new System.Drawing.Point(434, 35);
+            this.UstPanel2.Margin = new System.Windows.Forms.Padding(0, 0, 75, 50);
+            this.UstPanel2.Name = "UstPanel2";
+            this.UstPanel2.Size = new System.Drawing.Size(331, 137);
+            this.UstPanel2.TabIndex = 4;
             // 
-            // pictureBox3
+            // UstPanel3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(832, 35);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0, 35, 75, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(331, 137);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.UstPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UstPanel3.BackgroundImage")));
+            this.UstPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UstPanel3.Location = new System.Drawing.Point(832, 35);
+            this.UstPanel3.Margin = new System.Windows.Forms.Padding(0, 0, 75, 50);
+            this.UstPanel3.Name = "UstPanel3";
+            this.UstPanel3.Size = new System.Drawing.Size(331, 137);
+            this.UstPanel3.TabIndex = 4;
             // 
-            // pictureBox4
+            // OrtaPanel
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1230, 35);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0, 35, 36, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(331, 137);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.OrtaPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OrtaPanel.BackgroundImage")));
+            this.OrtaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OrtaPanel.Location = new System.Drawing.Point(36, 222);
+            this.OrtaPanel.Margin = new System.Windows.Forms.Padding(36, 0, 0, 50);
+            this.OrtaPanel.Name = "OrtaPanel";
+            this.OrtaPanel.Size = new System.Drawing.Size(1175, 302);
+            this.OrtaPanel.TabIndex = 5;
             // 
-            // pictureBox5
+            // AltPanel1
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(36, 227);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(36, 55, 0, 57);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(1175, 302);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
+            this.AltPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AltPanel1.BackgroundImage")));
+            this.AltPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AltPanel1.Location = new System.Drawing.Point(36, 574);
+            this.AltPanel1.Margin = new System.Windows.Forms.Padding(36, 0, 0, 0);
+            this.AltPanel1.Name = "AltPanel1";
+            this.AltPanel1.Size = new System.Drawing.Size(550, 310);
+            this.AltPanel1.TabIndex = 6;
             // 
-            // pictureBox6
+            // AltPanel2
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(36, 589);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(0, 0, 75, 36);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(550, 310);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
+            this.AltPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AltPanel2.BackgroundImage")));
+            this.AltPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AltPanel2.Location = new System.Drawing.Point(661, 574);
+            this.AltPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.AltPanel2.Name = "AltPanel2";
+            this.AltPanel2.Size = new System.Drawing.Size(550, 310);
+            this.AltPanel2.TabIndex = 6;
             // 
-            // pictureBox7
+            // UstPanel4
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(661, 589);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0, 0, 70, 36);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(550, 310);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 2;
-            this.pictureBox7.TabStop = false;
+            this.UstPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UstPanel4.BackgroundImage")));
+            this.UstPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UstPanel4.Location = new System.Drawing.Point(1230, 35);
+            this.UstPanel4.Margin = new System.Windows.Forms.Padding(0, 0, 36, 50);
+            this.UstPanel4.Name = "UstPanel4";
+            this.UstPanel4.Size = new System.Drawing.Size(331, 137);
+            this.UstPanel4.TabIndex = 4;
             // 
-            // pictureBox8
+            // SidePanel
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(1262, 227);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(299, 669);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
+            this.SidePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SidePanel.BackgroundImage")));
+            this.SidePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SidePanel.Location = new System.Drawing.Point(1262, 222);
+            this.SidePanel.Margin = new System.Windows.Forms.Padding(0, 0, 36, 0);
+            this.SidePanel.Name = "SidePanel";
+            this.SidePanel.Size = new System.Drawing.Size(299, 669);
+            this.SidePanel.TabIndex = 7;
             // 
             // AnaPanel
             // 
@@ -140,40 +125,30 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.SidePanel);
+            this.Controls.Add(this.AltPanel2);
+            this.Controls.Add(this.AltPanel1);
+            this.Controls.Add(this.OrtaPanel);
+            this.Controls.Add(this.UstPanel4);
+            this.Controls.Add(this.UstPanel3);
+            this.Controls.Add(this.UstPanel2);
+            this.Controls.Add(this.UstPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.5F);
-            this.Margin = new System.Windows.Forms.Padding(50);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "AnaPanel";
-            this.Padding = new System.Windows.Forms.Padding(50);
-            this.Size = new System.Drawing.Size(1647, 985);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.Size = new System.Drawing.Size(1626, 891);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Panel UstPanel1;
+        private System.Windows.Forms.Panel UstPanel2;
+        private System.Windows.Forms.Panel UstPanel3;
+        private System.Windows.Forms.Panel OrtaPanel;
+        private System.Windows.Forms.Panel AltPanel1;
+        private System.Windows.Forms.Panel AltPanel2;
+        private System.Windows.Forms.Panel UstPanel4;
+        private System.Windows.Forms.Panel SidePanel;
     }
 }

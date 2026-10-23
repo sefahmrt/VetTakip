@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -6,7 +6,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace e_pet_desk_deneme1   // Kendi projenizin namespace'i ile değiştirin
+namespace e_pet_desk_deneme1
 {
     /// <summary>Takvimde sütunu olan hekim.</summary>
     public class TakvimHekim

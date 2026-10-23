@@ -1,5 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace e_pet_desk_deneme1
@@ -7,79 +13,71 @@ namespace e_pet_desk_deneme1
     public partial class AnaForm : Form
     {
         private RadiusButton aktifButon = null;
-        private readonly Color aktifRenk = Color.FromArgb(15, 118, 110);
-        private readonly Color pasifYaziRengi = Color.DimGray;
 
         public AnaForm()
         {
             InitializeComponent();
-            EkraniDuzenle();
-
+            MenuButonunaTiklandi(AnaSayfaBtn, new AnaPanel()); // açılışta Ana Sayfa seçili gelsin
             Version surum = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-            this.Text = "VetTakip Klinik Sistemi - Alpha v" + surum.ToString();
-            lblSurum.Text = "Alpha - v" + surum.ToString();
-
-            // Başlangıçta Ana Sayfa butonunu aktif et ve AnaPanel'i yükle
-            MenuButonunaTiklandi(AnaSayfaBtn, new AnaPanel());
+            this.Text = "E_Pet_Desk Alpha - v" + surum.ToString();
+            lblSurum.Text = "Alpha - v" +surum.ToString();
         }
 
-        /// <summary>
-        /// Farklı ekran çözünürlüklerinde panellerin tam oturmasını sağlar.
-        /// </summary>
-        private void EkraniDuzenle()
+        private void UserControlGetir(UserControl userControl)
         {
-            LogoPanel.Dock = DockStyle.Top;
-            MenuSidePanel.Dock = DockStyle.Left;
-            panelContainer.Dock = DockStyle.Fill;
-            panelContainer.BringToFront(); // Fill olan panelin diğerlerinin altına kaçmasını önler
+            userControl.Dock = DockStyle.Fill; // Sayfanın paneli tam doldurmasını sağlar
+            // Önceki sayfayı kapat (Dispose). Sadece Controls.Clear() yapılırsa her tıklamada eski sayfa bellekte kalır.
+            while (panelContainer.Controls.Count > 0)
+                panelContainer.Controls[0].Dispose();
+            panelContainer.Controls.Add(userControl); // Yeni sayfayı panele ekler
+            userControl.BringToFront();       // Öne getirir
         }
+
+        private void AnaSayfaBtn_Click(object sender, EventArgs e)
+        {
+            AnaPanel uc = new AnaPanel();
+            MenuButonunaTiklandi(AnaSayfaBtn, uc); // Hangi buton olduğunu ve hangi UserControl'ün açılacağını söylüyoruz
+        }
+
+        private void RandevularBtn_Click(object sender, EventArgs e)
+        {
+            Randevular uc = new Randevular();
+            MenuButonunaTiklandi(RandevularBtn, uc);
+        }
+
+        private void SahiplerBtn_Click(object sender, EventArgs e)
+        {
+            SahiplerPanel uc = new SahiplerPanel();
+            MenuButonunaTiklandi(SahiplerBtn, uc);
+        }
+
 
         private void MenuButonunaTiklandi(RadiusButton yeniButton, UserControl getirilecekUserControl)
         {
-            // Eğer zaten aktif olan butona tekrar tıklandıysa işlem yapma (gereksiz yeniden yüklemeyi önler)
-            if (aktifButon == yeniButton && panelContainer.Controls.Count > 0)
-            {
-                getirilecekUserControl?.Dispose();
-                return;
-            }
-
-            // 1. Önceki aktif butonun görünümünü sıfırla
+            // 1. Eğer daha önce seçilmiş bir buton varsa, rengini normal haline döndür
             if (aktifButon != null)
             {
-                aktifButon.ButtonColor = Color.Transparent;
-                aktifButon.TextColor = pasifYaziRengi;
+                aktifButon.ButtonColor = Color.Transparent; // RadiusButton'un arkaplan özelliği
+                aktifButon.TextColor = Color.DimGray;          // RadiusButton'un yazı rengi özelliği
                 aktifButon.IsActive = false;
             }
 
-            // 2. Yeni tıklanan butonu aktif olarak işaretle
-            if (yeniButton != null)
-            {
-                aktifButon = yeniButton;
-                aktifButon.ButtonColor = aktifRenk;
-                aktifButon.TextColor = Color.WhiteSmoke;
-                aktifButon.IsActive = true;
-            }
+            // 2. Yeni tıklanan butonu "aktif buton" olarak işaretle ve rengini değiştir
+            aktifButon = yeniButton;
+            aktifButon.ButtonColor = Color.FromArgb(15, 118, 110);
+            aktifButon.TextColor = Color.WhiteSmoke;
+            aktifButon.IsActive = true;
 
-            // 3. Paneldeki eski UserControl'leri bellekten tamamen temizle (Memory Leak Önlemi)
-            while (panelContainer.Controls.Count > 0)
-            {
-                Control eskiKontrol = panelContainer.Controls[0];
-                panelContainer.Controls.RemoveAt(0);
-                eskiKontrol.Dispose();
-            }
-
-            // 4. Yeni UserControl'ü panele ekle
-            if (getirilecekUserControl != null)
-            {
-                getirilecekUserControl.Dock = DockStyle.Fill;
-                panelContainer.Controls.Add(getirilecekUserControl);
-                getirilecekUserControl.BringToFront();
-            }
+            // 3. UserControl'ü panelin içinde açma işlemi
+            UserControlGetir(getirilecekUserControl);
         }
+
 
         private void MenuBtns_MouseEnter(object sender, EventArgs e)
         {
-            if (sender is RadiusButton btn)
+            RadiusButton btn = sender as RadiusButton; // Button yerine RadiusButton'a dönüştürüyoruz
+
+            if (btn != null)
             {
                 btn.TextColor = Color.WhiteSmoke;
             }
@@ -87,79 +85,55 @@ namespace e_pet_desk_deneme1
 
         private void MenuBtns_MouseLeave(object sender, EventArgs e)
         {
-            if (sender is RadiusButton btn && btn != aktifButon)
+            RadiusButton btn = sender as RadiusButton; // Button yerine RadiusButton'a dönüştürüyoruz
+            if (btn != null)
             {
-                btn.TextColor = pasifYaziRengi;
+                // Sadece aktif (seçili) OLMAYAN butonlar eski rengine dönsün
+                if (btn != aktifButon)
+                {
+                    btn.TextColor = Color.DimGray;
+                }
             }
-        }
-
-        // --- MENÜ BUTON TIKLAMA OLAYLARI ---
-
-        private void AnaSayfaBtn_Click(object sender, EventArgs e)
-        {
-            MenuButonunaTiklandi(AnaSayfaBtn, new AnaPanel());
-        }
-
-        private void RandevularBtn_Click(object sender, EventArgs e)
-        {
-            MenuButonunaTiklandi(RandevularBtn, new Randevular());
-        }
-
-        private void SahiplerBtn_Click(object sender, EventArgs e)
-        {
-            MenuButonunaTiklandi(SahiplerBtn, new SahiplerPanel());
-        }
-
-        private void HayvanlarBtn_Click(object sender, EventArgs e)
-        {
-            // İlgili UserControl oluşturulduğunda yorum satırını kaldırabilirsin:
-            // MenuButonunaTiklandi(HayvanlarBtn, new HayvanlarPanel());
-            YapimAsamasindaMesaji("Hayvanlar");
-        }
-
-        private void MuayeneBtn_Click(object sender, EventArgs e)
-        {
-            // MenuButonunaTiklandi(MuayeneBtn, new MuayenePanel());
-            YapimAsamasindaMesaji("Muayene Geçmişi");
-        }
-
-        private void YatakliHBtn_Click(object sender, EventArgs e)
-        {
-            // MenuButonunaTiklandi(YataklıHBtn, new YatakliHastalarPanel());
-            YapimAsamasindaMesaji("Yataklı Hastalar");
-        }
-
-        private void MesajlarBtn_Click(object sender, EventArgs e)
-        {
-            // MenuButonunaTiklandi(MesajlarBtn, new MesajlarPanel());
-            YapimAsamasindaMesaji("Mesajlar");
-        }
-
-        private void HatirlatmaBtn_Click(object sender, EventArgs e)
-        {
-            // MenuButonunaTiklandi(HatirlatmaBtn, new HatirlatmaPanel());
-            YapimAsamasindaMesaji("Hatırlatma");
-        }
-
-        private void TakvimBtn_Click(object sender, EventArgs e)
-        {
-            // MenuButonunaTiklandi(TakvimBtn, new TakvimPanel());
-            YapimAsamasindaMesaji("Takvim");
-        }
-
-        private void AyarlarBtn_Click(object sender, EventArgs e)
-        {
-            // MenuButonunaTiklandi(AyarlarBtn, new AyarlarPanel());
-            YapimAsamasindaMesaji("Ayarlar");
-        }
-
-        private void YapimAsamasindaMesaji(string modulAdi)
-        {
-            MessageBox.Show($"{modulAdi} modülü henüz yapım aşamasındadır.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void radiusButton1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void HayvanlarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MuayeneBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MesajlarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TakvimBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AyarlarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HatirlatmaBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void YatakliHBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

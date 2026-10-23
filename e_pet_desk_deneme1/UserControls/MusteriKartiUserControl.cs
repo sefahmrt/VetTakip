@@ -34,7 +34,12 @@ namespace e_pet_desk_deneme1
         public string Adres
         {
             get { return lblAdres.Text; }
-            set { lblAdres.Text = value; }
+            set
+            {
+                lblAdres.Text = value;
+                // Etiket AutoSize olduğu için sağa doğru uzuyor ve kartın dışına taşıyordu: sağ kenara yasla
+                lblAdres.Left = Math.Max(lblTelefon.Left, ClientSize.Width - lblAdres.Width - 6);
+            }
         }
     }
 }

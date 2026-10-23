@@ -1,6 +1,6 @@
 ﻿namespace e_pet_desk_deneme1
 {
-    partial class HastaKartlarıPanel
+    partial class RadiusTextBox
     {
         /// <summary> 
         ///Gerekli tasarımcı değişkeni.
@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // HastaKartlarıPanel
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "HastaKartlarıPanel";
-            this.Size = new System.Drawing.Size(1046, 563);
-            this.ResumeLayout(false);
-
         }
 
         #endregion

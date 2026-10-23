@@ -16,7 +16,7 @@ namespace e_pet_desk_deneme1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnaForm());
+            Application.Run(new GirisForm());
         }
     }
 }

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace e_pet_desk_deneme1
 {
@@ -16,9 +9,15 @@ namespace e_pet_desk_deneme1
         public GirisForm()
         {
             InitializeComponent();
+            Version surum = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            surumLbl.Text = "Alpha - v" + surum.ToString();
+            galeri3.Visible = true;
+            galeri2.Visible = false;
+            galeri1.Visible = false;
+            timer1.Start();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void girisBtn_Click(object sender, EventArgs e)
         {
             // 1. Veritabanı bağlantı cümlesini tanımlıyoruz
             string baglantiCumlesi = "Data Source=veritabani.db;Version=3;";
@@ -61,7 +60,21 @@ namespace e_pet_desk_deneme1
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            sifreTxt.PasswordChar = (sifreTxt.PasswordChar == '*') ? '\0' : '*';
+            // Eğer şu an şifre gizliyse ('*' karakteri varsa)
+            if (sifreTxt.PasswordChar == '*')
+            {
+                sifreTxt.PasswordChar = '\0'; // Şifreyi göster
+
+                // Buraya açık göz ikonunu koymalısın (Örn: Properties.Resources.goz_acik)
+                pictureBox2.Image = Properties.Resources.goz_acik;
+            }
+            else
+            {
+                sifreTxt.PasswordChar = '*'; // Şifreyi tekrar gizle
+
+                // Buraya kapalı göz ikonunu koymalısın (Örn: Properties.Resources.goz_kapali)
+                pictureBox2.Image = Properties.Resources.goz_kapali;
+            }
         }
 
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
@@ -72,6 +85,32 @@ namespace e_pet_desk_deneme1
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
             pictureBox2.BorderStyle = BorderStyle.None;
+        }
+
+        int sayac=0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            sayac++;
+            label8.Text = sayac.ToString();
+            if (sayac<=50)
+            {
+                galeri3.Visible = true;
+                galeri2.Visible = false;
+                galeri1.Visible = false;
+            }
+            else if (sayac <= 100)
+            {
+                galeri3.Visible = false;
+                galeri2.Visible = true;
+                galeri1.Visible = false;
+            }
+            else if (sayac <= 150)
+            {
+                galeri3.Visible = false;
+                galeri2.Visible = false;
+                galeri1.Visible = true;
+                if (sayac==150) sayac = 0;
+            }
         }
     }
 }

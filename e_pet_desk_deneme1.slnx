@@ -1,3 +1,10 @@
 <Solution>
-  <Project Path="e_pet_desk_deneme1/e_pet_desk_deneme1.csproj" Id="a855438d-3b91-4951-8b78-9a59dd544f49" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="e_pet_desk_deneme1/e_pet_desk_deneme1.csproj" Id="a855438d-3b91-4951-8b78-9a59dd544f49">
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="Debug|Any CPU" Project="x64" />
+  </Project>
 </Solution>

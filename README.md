@@ -1,3 +1,5 @@
-<img width="1266" height="713" alt="Ekran görüntüsü 2026-10-24 195840" src="https://github.com/user-attachments/assets/83fc0184-df47-456d-b0cb-a0022eb81031" /><img width="1920" height="1032" alt="Ekran görüntüsü 2026-10-24 195918" src="https://github.com/user-attachments/assets/93faadec-4e15-4357-a435-f19e04e9c3e7" /><img width="1920" height="1032" alt="Ekran görüntüsü 2026-10-24 195908" src="https://github.com/user-attachments/assets/86675567-3d82-42c9-8b5a-086d8b1e255a" />
-<img width="1920" height="1032" alt="Ekran görüntüsü 2026-10-24 195855" src="https://github.com/user-attachments/assets/a28089b0-c57d-440c-a1b5-5488ebe05cbf" />
-<img width="1920" height="1032" alt="Ekran görüntüsü 2026-10-24 195902" src="https://github.com/user-attachments/assets/24049d2b-3da4-4121-a1f7-0b4d9c6e6601" />
+<img width="1920" height="1032" alt="anasayfa" src="https://github.com/user-attachments/assets/3fb4ee8b-dbdc-4c4c-a6d8-db0dd428575b" />
+<img width="1920" height="1032" alt="takvim" src="https://github.com/user-attachments/assets/e33251b5-2156-4004-964b-58b6644d6b2a" />
+<img width="1920" height="1032" alt="sahip" src="https://github.com/user-attachments/assets/cb16ea00-178d-461f-838f-85d5d2ce87d8" />
+<img width="1920" height="1032" alt="randevu" src="https://github.com/user-attachments/assets/3d2fb4f7-4717-45ea-9fcf-0d5ca1dfd893" />
+<img width="1266" height="713" alt="giriş" src="https://github.com/user-attachments/assets/036eba5b-7274-4c00-8baf-b861cfe53834" />

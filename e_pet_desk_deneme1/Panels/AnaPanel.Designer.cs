@@ -33,6 +33,7 @@
             this.AltPanel2 = new System.Windows.Forms.Panel();
             this.AltPanel1 = new System.Windows.Forms.Panel();
             this.OrtaPanel = new System.Windows.Forms.Panel();
+            this.TakvimeGit = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.UstPanel4 = new System.Windows.Forms.Panel();
@@ -104,6 +105,7 @@
             // 
             this.OrtaPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OrtaPanel.BackgroundImage")));
             this.OrtaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OrtaPanel.Controls.Add(this.TakvimeGit);
             this.OrtaPanel.Controls.Add(this.label11);
             this.OrtaPanel.Controls.Add(this.dataGridView1);
             this.OrtaPanel.Location = new System.Drawing.Point(36, 222);
@@ -113,11 +115,30 @@
             this.OrtaPanel.Size = new System.Drawing.Size(1175, 302);
             this.OrtaPanel.TabIndex = 5;
             // 
+            // TakvimeGit
+            // 
+            this.TakvimeGit.BackColor = System.Drawing.Color.Transparent;
+            this.TakvimeGit.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.TakvimeGit.FlatAppearance.BorderSize = 0;
+            this.TakvimeGit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.TakvimeGit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.TakvimeGit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TakvimeGit.Font = new System.Drawing.Font("Inter", 14F);
+            this.TakvimeGit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
+            this.TakvimeGit.Location = new System.Drawing.Point(982, 0);
+            this.TakvimeGit.Margin = new System.Windows.Forms.Padding(0);
+            this.TakvimeGit.Name = "TakvimeGit";
+            this.TakvimeGit.Size = new System.Drawing.Size(188, 40);
+            this.TakvimeGit.TabIndex = 2;
+            this.TakvimeGit.Text = "Takvime Git >";
+            this.TakvimeGit.UseVisualStyleBackColor = false;
+            this.TakvimeGit.Click += new System.EventHandler(this.TakvimeGit_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(8, 6);
+            this.label11.Location = new System.Drawing.Point(19, 6);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(125, 30);
             this.label11.TabIndex = 1;
@@ -125,6 +146,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 40);
@@ -445,5 +467,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button TakvimeGit;
     }
 }

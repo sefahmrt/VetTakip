@@ -126,6 +126,12 @@
     <Compile Include="GirisForm.Designer.cs">
       <DependentUpon>GirisForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Takvim\RandevuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Takvim\RandevuForm.Designer.cs">
+      <DependentUpon>RandevuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopShadow.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <EmbeddedResource Include="Takvim\RandevuEkrani.resx">
       <DependentUpon>RandevuEkrani.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Takvim\RandevuForm.resx">
+      <DependentUpon>RandevuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MusteriKartiUserControl.resx">
       <DependentUpon>MusteriKartiUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="vettakip.ico" />
-    <Content Include="vettakip.db" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ReaLTaiizor">

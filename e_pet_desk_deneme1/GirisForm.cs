@@ -14,7 +14,6 @@ namespace e_pet_desk_deneme1
             galeri3.Visible = true;
             galeri2.Visible = false;
             galeri1.Visible = false;
-            timer1.Start();
         }
 
         private void girisBtn_Click(object sender, EventArgs e)
@@ -73,30 +72,5 @@ namespace e_pet_desk_deneme1
             pictureBox2.BorderStyle = BorderStyle.None;
         }
 
-        int sayac=0;
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            sayac++;
-            label8.Text = sayac.ToString();
-            if (sayac<=50)
-            {
-                galeri3.Visible = true;
-                galeri2.Visible = false;
-                galeri1.Visible = false;
-            }
-            else if (sayac <= 100)
-            {
-                galeri3.Visible = false;
-                galeri2.Visible = true;
-                galeri1.Visible = false;
-            }
-            else if (sayac <= 150)
-            {
-                galeri3.Visible = false;
-                galeri2.Visible = false;
-                galeri1.Visible = true;
-                if (sayac==150) sayac = 0;
-            }
-        }
     }
 }

@@ -31,6 +31,24 @@ namespace e_pet_desk_deneme1
             return liste;
         }
 
+        /// <summary>Randevu formundaki hasta listesi: "Pamuk (Zeynep Arslan)" biçiminde, Id ile birlikte.</summary>
+        public static List<KeyValuePair<int, string>> HastalariGetir()
+        {
+            var liste = new List<KeyValuePair<int, string>>();
+            const string sorgu =
+                "SELECT h.id, h.ad, COALESCE(m.ad || ' ' || m.soyad, '-') AS sahip " +
+                "FROM hasta h LEFT JOIN musteri m ON m.id = h.musteri_id " +
+                "ORDER BY h.ad, m.ad";
+            using (SQLiteConnection baglanti = Veritabani.Ac())
+            using (var komut = new SQLiteCommand(sorgu, baglanti))
+            using (SQLiteDataReader oku = komut.ExecuteReader())
+            {
+                while (oku.Read())
+                    liste.Add(new KeyValuePair<int, string>(Convert.ToInt32(oku["id"]), oku["ad"] + " (" + oku["sahip"] + ")"));
+            }
+            return liste;
+        }
+
         /// <summary>Verilen günün randevuları (gece yarısını aşanlar dahil).</summary>
         public static List<TakvimRandevu> GunuGetir(DateTime gun)
         {

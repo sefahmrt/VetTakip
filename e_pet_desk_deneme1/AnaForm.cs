@@ -22,6 +22,7 @@ namespace e_pet_desk_deneme1
             Version surum = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             this.Text = "E_Pet_Desk Alpha - v" + surum.ToString();
             lblSurum.Text = "Alpha - v" +surum.ToString();
+            MenuButonunaTiklandi(AnaSayfaBtn, AnaPanelOlustur());
         }
 
         private void UserControlGetir(UserControl userControl)
@@ -36,8 +37,7 @@ namespace e_pet_desk_deneme1
 
         private void AnaSayfaBtn_Click(object sender, EventArgs e)
         {
-            AnaPanel uc = new AnaPanel();
-            MenuButonunaTiklandi(AnaSayfaBtn, uc); // Hangi buton olduğunu ve hangi UserControl'ün açılacağını söylüyoruz
+            MenuButonunaTiklandi(AnaSayfaBtn, AnaPanelOlustur());
         }
 
         private void RandevularBtn_Click(object sender, EventArgs e)
@@ -136,5 +136,16 @@ namespace e_pet_desk_deneme1
         {
             MessageBox.Show("Yapım Aşamasında");
         }
+
+    private AnaPanel AnaPanelOlustur()
+    {
+      var panel = new AnaPanel();
+      // Panel değişirken eski panel Dispose edildiği için, değişimi olay bittikten sonraya bırakıyoruz
+      panel.TakvimeGitIstendi += delegate
+      {
+        BeginInvoke(new Action(() => MenuButonunaTiklandi(RandevularBtn, new Randevular())));
+      };
+      return panel;
     }
+  }
 }

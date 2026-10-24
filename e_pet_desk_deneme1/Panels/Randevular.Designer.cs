@@ -37,8 +37,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Randevular";
+            this.Padding = new System.Windows.Forms.Padding(20);
             this.Size = new System.Drawing.Size(1626, 873);
             this.ResumeLayout(false);
 

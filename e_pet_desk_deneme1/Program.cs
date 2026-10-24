@@ -24,12 +24,9 @@ namespace e_pet_desk_deneme1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            if (GirisEkraniGosterilsin)
+            using (var giris = new AnaForm())
             {
-                using (GirisForm giris = new GirisForm())
-                {
-                    if (giris.ShowDialog() != DialogResult.OK) return;   // giriş yapılmadan kapatıldı: programdan çık
-                }
+                if (giris.ShowDialog() != DialogResult.OK) return;
             }
             Application.Run(new AnaForm());
         }

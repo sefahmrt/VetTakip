@@ -18,6 +18,7 @@ namespace e_pet_desk_deneme1
             InitializeComponent();
             RandevulariListele();
             BugunkuRandevuSayisiniGoster();
+            
 
             // Mevcut tasarım ayarların
             dataGridView1.BorderStyle = BorderStyle.None;
@@ -187,5 +188,11 @@ namespace e_pet_desk_deneme1
             }
         }
 
-    }
+        public event EventHandler TakvimeGitIstendi;
+
+        private void TakvimeGit_Click(object sender, EventArgs e)
+        {
+          if (TakvimeGitIstendi != null) TakvimeGitIstendi(this, EventArgs.Empty);
+        }
+  }
 }

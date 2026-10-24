@@ -31,7 +31,7 @@ namespace e_pet_desk_deneme1
         {
             BackColor = Color.FromArgb(242, 242, 242);
             Font = new Font("Segoe UI", 9.75f);
-            Size = new Size(1626, 800);
+            Size = new Size(1626, 873);
 
             // Üst çubuk: Önceki / Sonraki / Bugün ve tarih
             var ust = new Panel { Dock = DockStyle.Top, Height = 56, Padding = new Padding(16, 12, 16, 6) };
@@ -45,6 +45,16 @@ namespace e_pet_desk_deneme1
             tarihYazisi.ForeColor = Color.FromArgb(19, 78, 74);
             ust.Controls.Add(tarihYazisi);
             ust.Controls.Add(dugmeler);
+
+            // Sağda: Randevu Oluştur
+            var olustur = Dugme("+ Randevu Oluştur", 160);
+            olustur.Dock = DockStyle.Right;
+            olustur.BackColor = Color.FromArgb(15, 118, 110);
+            olustur.ForeColor = Color.White;
+            olustur.FlatAppearance.BorderSize = 0;
+            olustur.FlatAppearance.MouseOverBackColor = Color.FromArgb(19, 94, 88);
+            olustur.Click += delegate { RandevuFormuAc(null, null); };
+            ust.Controls.Add(olustur);
 
             // Mesaj şeridi (gizli başlar; tıklayınca kapanır)
             mesaj.Dock = DockStyle.Top;
@@ -122,8 +132,19 @@ namespace e_pet_desk_deneme1
         private void Takvim_BosSaatTiklandi(object sender, BosSaatEventArgs e)
         {
             if (BosSaatTiklandi != null) { BosSaatTiklandi(this, e); return; }
-            MesajGoster("Yeni randevu: " + e.Hekim.Ad + ", " + e.Baslangic.ToString("d MMMM, HH:mm", Tr) + " - " + e.Bitis.ToString("HH:mm") +
-                        ". (Randevu ekleme ekranınızı BosSaatTiklandi olayına bağlayın.)", false);
+            RandevuFormuAc(e.Hekim, e.Baslangic);   // boş saate tıklanınca hekim ve saat önceden dolu gelir
+        }
+
+        /// <summary>Randevu oluşturma penceresini açar; kaydedilirse takvimi yeniler.</summary>
+        private void RandevuFormuAc(TakvimHekim hekim, DateTime? baslangic)
+        {
+            using (var form = new RandevuForm(takvim.Tarih, hekim, baslangic))
+            {
+                if (form.ShowDialog(this) != DialogResult.OK) return;
+                if (form.KaydedilenGun != takvim.Tarih) takvim.Tarih = form.KaydedilenGun;   // TarihDegisti günü yükler
+                else GunuYukle();
+                MesajGoster("Randevu kaydedildi.", false);
+            }
         }
 
         private void Takvim_RandevuCiftTiklandi(object sender, RandevuEventArgs e)
@@ -150,8 +171,14 @@ namespace e_pet_desk_deneme1
         {
             var b = new Button
             {
-                Text = yazi, Width = genislik, Height = 34, FlatStyle = FlatStyle.Flat, BackColor = Color.White,
-                ForeColor = Color.FromArgb(31, 41, 55), Cursor = Cursors.Hand, Margin = new Padding(0, 0, 4, 0)
+                Text = yazi,
+                Width = genislik,
+                Height = 34,
+                FlatStyle = FlatStyle.Flat,
+                BackColor = Color.White,
+                ForeColor = Color.FromArgb(31, 41, 55),
+                Cursor = Cursors.Hand,
+                Margin = new Padding(0, 0, 4, 0)
             };
             b.FlatAppearance.BorderColor = Color.FromArgb(209, 213, 219);
             b.FlatAppearance.MouseOverBackColor = Color.FromArgb(243, 244, 246);

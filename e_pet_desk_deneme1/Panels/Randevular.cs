@@ -17,7 +17,7 @@ namespace e_pet_desk_deneme1
             InitializeComponent();
 
             // Randevu takvimi bu panelin içinde, ana pencerede açılır (ayrı pencere değil).
-            Controls.Add(new RandevuEkrani { Dock = DockStyle.Bottom });
+            Controls.Add(new RandevuEkrani { Dock = DockStyle.Fill });
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace e_pet_desk_deneme1
 {
     public partial class AnaForm : Form
@@ -96,44 +97,44 @@ namespace e_pet_desk_deneme1
             }
         }
 
-        private void radiusButton1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void HayvanlarBtn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Yapım Aşamasında");
         }
 
         private void MuayeneBtn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Yapım Aşamasında");
         }
 
         private void MesajlarBtn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Yapım Aşamasında");
         }
 
         private void TakvimBtn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Yapım Aşamasında");
         }
 
         private void AyarlarBtn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Yapım Aşamasında");
         }
 
         private void HatirlatmaBtn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Yapım Aşamasında");
         }
 
         private void YatakliHBtn_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Yapım Aşamasında");
+        }
 
+        private void HayvanlarBtn_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Yapım Aşamasında");
         }
     }
 }

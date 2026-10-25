@@ -4,4 +4,6 @@
 <img width="1920" height="1032" alt="randevu" src="https://github.com/user-attachments/assets/3d2fb4f7-4717-45ea-9fcf-0d5ca1dfd893" />
 <img width="1920" height="1032" alt="Ekran görüntüsü 2026-10-25 040533" src="https://github.com/user-attachments/assets/ae44f2f8-832d-40a0-bf09-b8bad2fa64d6" />
 
+<img width="1920" height="1032" alt="Ekran görüntüsü 2026-10-25 040732" src="https://github.com/user-attachments/assets/eb67abcf-3269-4387-87f4-744b7bbbc6da" />
+<img width="1920" height="1032" alt="Ekran görüntüsü 2026-10-25 040723" src="https://github.com/user-attachments/assets/3babaa8e-3845-4363-ac5d-901cf1156083" />
 

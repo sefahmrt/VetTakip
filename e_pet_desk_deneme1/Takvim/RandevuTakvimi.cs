@@ -209,7 +209,7 @@ namespace e_pet_desk_deneme1
         private float ZamanY(DateTime t)
         {
             double dakika = (t - GunBasi).TotalMinutes;
-            return (float)(BaslikYuksekligi + dakika / dakikaAraligi * satirYuksekligi - KaydirmaDegeri);
+            return (float)(BaslikYuksekligi + (dakika / dakikaAraligi * satirYuksekligi) - KaydirmaDegeri);
         }
 
         private void YerlesimiYenile()
@@ -283,7 +283,7 @@ namespace e_pet_desk_deneme1
         {
             float sw = SutunGenisligi;
             float genislik = (sw - 6) / k.SeritSayisi;
-            float x = IzgaraSol + k.Sutun * sw + 3 + k.Serit * genislik;
+            float x = IzgaraSol + (k.Sutun * sw) + 3 + (k.Serit * genislik);
             DateTime bas = k.R.Baslangic < GunBasi ? GunBasi : k.R.Baslangic;
             DateTime son = k.R.Bitis > GunSonu ? GunSonu : k.R.Bitis;
             float y1 = ZamanY(bas) + 1, y2 = ZamanY(son) - 1;
@@ -308,8 +308,8 @@ namespace e_pet_desk_deneme1
             float sw = SutunGenisligi;
             sutun = Math.Min(hekimler.Count - 1, (int)((p.X - IzgaraSol) / sw));
             baslangic = GunBasi.AddMinutes(satir * dakikaAraligi);
-            int y = BaslikYuksekligi + satir * satirYuksekligi - KaydirmaDegeri;
-            alan = new Rectangle((int)(IzgaraSol + sutun * sw) + 1, y + 1, (int)sw - 1, satirYuksekligi - 1);
+            int y = BaslikYuksekligi + (satir * satirYuksekligi) - KaydirmaDegeri;
+            alan = new Rectangle((int)(IzgaraSol + (sutun * sw)) + 1, y + 1, (int)sw - 1, satirYuksekligi - 1);
             return true;
         }
 
@@ -376,7 +376,7 @@ namespace e_pet_desk_deneme1
         {
             base.OnMouseWheel(e);
             if (!kaydirma.Visible) return;
-            int yeni = kaydirma.Value - e.Delta / 120 * satirYuksekligi;
+            int yeni = kaydirma.Value - (e.Delta / 120 * satirYuksekligi);
             kaydirma.Value = Math.Max(0, Math.Min(yeni, kaydirma.Maximum - kaydirma.LargeChange + 1));
         }
 
@@ -420,7 +420,7 @@ namespace e_pet_desk_deneme1
             {
                 for (int i = 0; i <= SatirSayisi; i++)
                 {
-                    int y = BaslikYuksekligi + i * satirYuksekligi - KaydirmaDegeri;
+                    int y = BaslikYuksekligi + (i * satirYuksekligi) - KaydirmaDegeri;
                     if (y < BaslikYuksekligi - satirYuksekligi || y > ClientSize.Height) continue;
                     DateTime t = GunBasi.AddMinutes(i * dakikaAraligi);
                     bool tamSaat = t.Minute == 0;
@@ -433,7 +433,7 @@ namespace e_pet_desk_deneme1
                 g.DrawLine(saatKalemi, SaatSutunu, BaslikYuksekligi, SaatSutunu, ClientSize.Height);
                 for (int s = 1; s < hekimler.Count; s++)
                 {
-                    int x = (int)(IzgaraSol + s * sw);
+                    int x = (int)(IzgaraSol + (s * sw));
                     g.DrawLine(saatKalemi, x, BaslikYuksekligi, x, ClientSize.Height);
                 }
             }
@@ -473,7 +473,7 @@ namespace e_pet_desk_deneme1
                 for (int s = 0; s < hekimler.Count; s++)
                 {
                     var h = hekimler[s];
-                    var r = new Rectangle((int)(IzgaraSol + s * sw), 0, (int)(IzgaraSol + (s + 1) * sw) - (int)(IzgaraSol + s * sw), BaslikYuksekligi);
+                    var r = new Rectangle((int)(IzgaraSol + (s * sw)), 0, (int)(IzgaraSol + ((s + 1) * sw)) - (int)(IzgaraSol + (s * sw)), BaslikYuksekligi);
                     if (s > 0) { r.X += 1; r.Width -= 1; }
                     using (var b = new SolidBrush(h.Renk.IsEmpty ? VurguRengi : h.Renk)) g.FillRectangle(b, r);
                     TextRenderer.DrawText(g, h.Ad ?? "", kalinYazi, Rectangle.Inflate(r, -6, 0), YaziRengi(h.Renk.IsEmpty ? VurguRengi : h.Renk),
@@ -487,7 +487,7 @@ namespace e_pet_desk_deneme1
         {
             TakvimHekim h = hekimler.FirstOrDefault(x => x.Id == r.HekimId);
             Color renk = r.Renk ?? (h != null && !h.Renk.IsEmpty ? h.Renk : VurguRengi);
-            if (r.Soluk) renk = Color.FromArgb(renk.A, (renk.R + 2 * 255) / 3, (renk.G + 2 * 255) / 3, (renk.B + 2 * 255) / 3);
+            if (r.Soluk) renk = Color.FromArgb(renk.A, (renk.R + (2 * 255)) / 3, (renk.G + (2 * 255)) / 3, (renk.B + (2 * 255)) / 3);
             else if (r == uzerindeki) renk = ControlPaint.Light(renk, 0.15f);
             Color yazi = YaziRengi(renk);
 
@@ -509,7 +509,7 @@ namespace e_pet_desk_deneme1
             {
                 // Kısa randevu (ör. 15 dk): saat ve başlık tek satırda
                 int kucukYukseklik = TextRenderer.MeasureText(g, "Ag", kucuk, Size.Empty, TextFormatFlags.NoPadding).Height;
-                if (metin.Height < kucukYukseklik * 2 + 2)
+                if (metin.Height < (kucukYukseklik * 2) + 2)
                 {
                     using (var kucukKalin = new Font(kucuk, r.Soluk ? FontStyle.Bold | FontStyle.Strikeout : FontStyle.Bold))
                         TextRenderer.DrawText(g, r.Baslangic.ToString("HH:mm") + "  " + (r.Baslik ?? ""), kucukKalin,
@@ -535,7 +535,7 @@ namespace e_pet_desk_deneme1
         // Açık renk zeminde koyu, koyu zeminde beyaz yazı
         private static Color YaziRengi(Color zemin)
         {
-            double parlaklik = 0.299 * zemin.R + 0.587 * zemin.G + 0.114 * zemin.B;
+            double parlaklik = (0.299 * zemin.R) + (0.587 * zemin.G) + (0.114 * zemin.B);
             return parlaklik > 165 ? Color.FromArgb(31, 41, 55) : Color.White;
         }
 

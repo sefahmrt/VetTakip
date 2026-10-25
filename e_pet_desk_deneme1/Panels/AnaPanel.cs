@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace e_pet_desk_deneme1
 {
@@ -18,7 +13,7 @@ namespace e_pet_desk_deneme1
             InitializeComponent();
             RandevulariListele();
             BugunkuRandevuSayisiniGoster();
-            
+
 
             // Mevcut tasarım ayarların
             dataGridView1.BorderStyle = BorderStyle.None;
@@ -192,7 +187,7 @@ namespace e_pet_desk_deneme1
 
         private void TakvimeGit_Click(object sender, EventArgs e)
         {
-          if (TakvimeGitIstendi != null) TakvimeGitIstendi(this, EventArgs.Empty);
+            if (TakvimeGitIstendi != null) TakvimeGitIstendi(this, EventArgs.Empty);
         }
-  }
+    }
 }

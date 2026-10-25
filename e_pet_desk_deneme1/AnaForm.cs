@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -21,7 +15,7 @@ namespace e_pet_desk_deneme1
             MenuButonunaTiklandi(AnaSayfaBtn, new AnaPanel()); // açılışta Ana Sayfa seçili gelsin
             Version surum = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             this.Text = "E_Pet_Desk Alpha - v" + surum.ToString();
-            lblSurum.Text = "Alpha - v" +surum.ToString();
+            lblSurum.Text = "Alpha - v" + surum.ToString();
             MenuButonunaTiklandi(AnaSayfaBtn, AnaPanelOlustur());
         }
 
@@ -137,15 +131,15 @@ namespace e_pet_desk_deneme1
             MessageBox.Show("Yapım Aşamasında");
         }
 
-    private AnaPanel AnaPanelOlustur()
-    {
-      var panel = new AnaPanel();
-      // Panel değişirken eski panel Dispose edildiği için, değişimi olay bittikten sonraya bırakıyoruz
-      panel.TakvimeGitIstendi += delegate
-      {
-        BeginInvoke(new Action(() => MenuButonunaTiklandi(RandevularBtn, new Randevular())));
-      };
-      return panel;
+        private AnaPanel AnaPanelOlustur()
+        {
+            var panel = new AnaPanel();
+            // Panel değişirken eski panel Dispose edildiği için, değişimi olay bittikten sonraya bırakıyoruz
+            panel.TakvimeGitIstendi += delegate
+            {
+                BeginInvoke(new Action(() => MenuButonunaTiklandi(RandevularBtn, new Randevular())));
+            };
+            return panel;
+        }
     }
-  }
 }

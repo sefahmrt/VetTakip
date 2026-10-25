@@ -1,95 +1,94 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
-using System.Text;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Globalization;
+using System.Windows.Forms;
 
 namespace e_pet_desk_deneme1
 {
-  /// <summary>
-  /// Yeni randevu oluşturma penceresi. Kontroller RandevuForm.Designer.cs içinde (arayüzden düzenlenir).
-  /// Kaydet'e basınca RandevuVeri.RandevuEkle ile veritabanına yazar.
-  /// Hekim, tarih ve başlangıç saati dışarıdan (boş saate tıklanınca) önceden doldurulabilir.
-  /// </summary>
-  public partial class RandevuForm : Form
-  {
-    private readonly DateTime ilkTarih;
-    private readonly TakvimHekim ilkHekim;
-    private readonly DateTime? ilkBaslangic;
-
-    /// <summary>Kaydedilen randevunun başlangıç günü (ekranı o güne götürmek için).</summary>
-    public DateTime KaydedilenGun { get; private set; }
-
-    /// <summary>Tasarım ekranı (Visual Studio designer) için boş kurucu.</summary>
-    public RandevuForm() : this(DateTime.Today) { }
-
-    public RandevuForm(DateTime tarih, TakvimHekim hekim = null, DateTime? baslangic = null)
+    /// <summary>
+    /// Yeni randevu oluşturma penceresi. Kontroller RandevuForm.Designer.cs içinde (arayüzden düzenlenir).
+    /// Kaydet'e basınca RandevuVeri.RandevuEkle ile veritabanına yazar.
+    /// Hekim, tarih ve başlangıç saati dışarıdan (boş saate tıklanınca) önceden doldurulabilir.
+    /// </summary>
+    public partial class RandevuForm : Form
     {
-      InitializeComponent();
-      ilkTarih = tarih;
-      ilkHekim = hekim;
-      ilkBaslangic = baslangic;
-    }
+        private readonly DateTime ilkTarih;
+        private readonly TakvimHekim ilkHekim;
+        private readonly DateTime? ilkBaslangic;
 
-    protected override void OnLoad(EventArgs e)
-    {
-      base.OnLoad(e);
-      // Tasarım ekranında veritabanına bağlanma
-      if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
+        /// <summary>Kaydedilen randevunun başlangıç günü (ekranı o güne götürmek için).</summary>
+        public DateTime KaydedilenGun { get; private set; }
 
-      cmbHasta.DisplayMember = "Value";
-      cmbHasta.ValueMember = "Key";
-      cmbHekim.DisplayMember = "Ad";
-      if (cmbSure.SelectedIndex < 0) cmbSure.SelectedIndex = 1;   // 30 dk
+        /// <summary>Tasarım ekranı (Visual Studio designer) için boş kurucu.</summary>
+        public RandevuForm() : this(DateTime.Today) { }
 
-      dtpTarih.Value = ilkTarih.Date;
-      DateTime bas = ilkBaslangic ?? ilkTarih.Date.AddHours(9);
-      dtpBaslangic.Value = DateTime.Today.Add(bas.TimeOfDay);
+        public RandevuForm(DateTime tarih, TakvimHekim hekim = null, DateTime? baslangic = null)
+        {
+            InitializeComponent();
+            ilkTarih = tarih;
+            ilkHekim = hekim;
+            ilkBaslangic = baslangic;
+        }
 
-      try
-      {
-        foreach (var h in RandevuVeri.HastalariGetir()) cmbHasta.Items.Add(h);
-        foreach (var h in RandevuVeri.HekimleriGetir()) cmbHekim.Items.Add(h);
-      }
-      catch (Exception ex) { lblHata.Text = Veritabani.HataMetni(ex); }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            // Tasarım ekranında veritabanına bağlanma
+            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
 
-      if (ilkHekim != null)
-        for (int i = 0; i < cmbHekim.Items.Count; i++)
-          if (((TakvimHekim)cmbHekim.Items[i]).Id == ilkHekim.Id) { cmbHekim.SelectedIndex = i; break; }
-      if (cmbHekim.SelectedIndex < 0 && cmbHekim.Items.Count > 0) cmbHekim.SelectedIndex = 0;
-    }
+            cmbHasta.DisplayMember = "Value";
+            cmbHasta.ValueMember = "Key";
+            cmbHekim.DisplayMember = "Ad";
+            if (cmbSure.SelectedIndex < 0) cmbSure.SelectedIndex = 1;   // 30 dk
 
-    private void btnKaydet_Click(object sender, EventArgs e)
-    {
-      lblHata.Text = "";
-      if (!(cmbHasta.SelectedItem is KeyValuePair<int, string>))
-      {
-        lblHata.Text = "Lütfen listeden bir hasta seçin.";
-        return;
-      }
-      var hasta = (KeyValuePair<int, string>)cmbHasta.SelectedItem;
-      var hekim = cmbHekim.SelectedItem as TakvimHekim;
-      if (hekim == null) { lblHata.Text = "Lütfen bir hekim seçin."; return; }
+            dtpTarih.Value = ilkTarih.Date;
+            DateTime bas = ilkBaslangic ?? ilkTarih.Date.AddHours(9);
+            dtpBaslangic.Value = DateTime.Today.Add(bas.TimeOfDay);
 
-      int sure = int.Parse(cmbSure.SelectedItem.ToString().Split(' ')[0], CultureInfo.InvariantCulture);
-      DateTime baslangic = dtpTarih.Value.Date.Add(dtpBaslangic.Value.TimeOfDay);
-      DateTime bitis = baslangic.AddMinutes(sure);
+            try
+            {
+                foreach (var h in RandevuVeri.HastalariGetir()) cmbHasta.Items.Add(h);
+                foreach (var h in RandevuVeri.HekimleriGetir()) cmbHekim.Items.Add(h);
+            }
+            catch (Exception ex) { lblHata.Text = Veritabani.HataMetni(ex); }
 
-      try
-      {
-        RandevuVeri.RandevuEkle(hasta.Key, hekim.Id, baslangic, bitis, txtIslem.Text);
-        KaydedilenGun = baslangic.Date;
-        DialogResult = DialogResult.OK;
-        Close();
-      }
-      catch (Exception ex)
-      {
-        // Çakışma ve veritabanı hataları formun içinde gösterilir
-        lblHata.Text = ex is InvalidOperationException || ex is ArgumentException ? ex.Message : Veritabani.HataMetni(ex);
-      }
-    }
+            if (ilkHekim != null)
+                for (int i = 0; i < cmbHekim.Items.Count; i++)
+                    if (((TakvimHekim)cmbHekim.Items[i]).Id == ilkHekim.Id) { cmbHekim.SelectedIndex = i; break; }
+            if (cmbHekim.SelectedIndex < 0 && cmbHekim.Items.Count > 0) cmbHekim.SelectedIndex = 0;
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            lblHata.Text = "";
+            if (!(cmbHasta.SelectedItem is KeyValuePair<int, string>))
+            {
+                lblHata.Text = "Lütfen listeden bir hasta seçin.";
+                return;
+            }
+            var hasta = (KeyValuePair<int, string>)cmbHasta.SelectedItem;
+            var hekim = cmbHekim.SelectedItem as TakvimHekim;
+            if (hekim == null) { lblHata.Text = "Lütfen bir hekim seçin."; return; }
+
+            int sure = int.Parse(cmbSure.SelectedItem.ToString().Split(' ')[0], CultureInfo.InvariantCulture);
+            DateTime baslangic = dtpTarih.Value.Date.Add(dtpBaslangic.Value.TimeOfDay);
+            DateTime bitis = baslangic.AddMinutes(sure);
+
+            try
+            {
+                RandevuVeri.RandevuEkle(hasta.Key, hekim.Id, baslangic, bitis, txtIslem.Text);
+                KaydedilenGun = baslangic.Date;
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                // Çakışma ve veritabanı hataları formun içinde gösterilir
+                lblHata.Text = ex is InvalidOperationException || ex is ArgumentException ? ex.Message : Veritabani.HataMetni(ex);
+            }
+        }
 
         private void radiusButton1_MouseEnter(object sender, EventArgs e)
         {

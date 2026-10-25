@@ -108,6 +108,12 @@
     <Compile Include="AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\HayvanEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\HayvanEkle.Designer.cs">
+      <DependentUpon>HayvanEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\Hayvanlar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     <Compile Include="GirisForm.Designer.cs">
       <DependentUpon>GirisForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\YeniSahip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\YeniSahip.Designer.cs">
+      <DependentUpon>YeniSahip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Takvim\RandevuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,14 +150,14 @@
     <Compile Include="UserControls\RadiusButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\RadiusComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RadiusDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\RadiusTextBox.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\MusteriKartiUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\MusteriKartiUserControl.Designer.cs">
-      <DependentUpon>MusteriKartiUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Veritabani.cs" />
@@ -181,17 +193,20 @@
     <EmbeddedResource Include="GirisForm.resx">
       <DependentUpon>GirisForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panels\HayvanEkle.resx">
+      <DependentUpon>HayvanEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\Hayvanlar.resx">
       <DependentUpon>Hayvanlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\YeniSahip.resx">
+      <DependentUpon>YeniSahip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takvim\RandevuEkrani.resx">
       <DependentUpon>RandevuEkrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takvim\RandevuForm.resx">
       <DependentUpon>RandevuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MusteriKartiUserControl.resx">
-      <DependentUpon>MusteriKartiUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

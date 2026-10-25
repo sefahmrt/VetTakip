@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace e_pet_desk_deneme1
@@ -13,7 +10,6 @@ namespace e_pet_desk_deneme1
         /// false: geliştirirken giriş ekranı atlanır, doğrudan ana form açılır.
         /// (Eskiden bunun için Application.Run(new GirisForm()) / Application.Run(new AnaForm()) satırı değiştiriliyordu.)
         /// </summary>
-        private static readonly bool GirisEkraniGosterilsin = false;
 
         /// <summary>
         /// Uygulamanın ana girdi noktası.

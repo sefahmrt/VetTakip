@@ -406,7 +406,6 @@
             // AnaPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.Controls.Add(this.SidePanel);
@@ -420,7 +419,7 @@
             this.Font = new System.Drawing.Font("Inter", 15.5F);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "AnaPanel";
-            this.Size = new System.Drawing.Size(1626, 891);
+            this.Size = new System.Drawing.Size(1622, 891);
             this.OrtaPanel.ResumeLayout(false);
             this.OrtaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

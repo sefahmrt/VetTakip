@@ -30,17 +30,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RandevuForm));
             this.lblBaslik = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
-            this.cmbHasta = new System.Windows.Forms.ComboBox();
+            this.cmbHasta = new VetTakip.RadiusComboBox();
             this.lblHekim = new System.Windows.Forms.Label();
-            this.cmbHekim = new System.Windows.Forms.ComboBox();
+            this.cmbHekim = new VetTakip.RadiusComboBox();
             this.lblTarih = new System.Windows.Forms.Label();
-            this.dtpTarih = new System.Windows.Forms.DateTimePicker();
+            this.dtpTarih = new VetTakip.RadiusDateTimePicker();
             this.lblBaslangic = new System.Windows.Forms.Label();
-            this.dtpBaslangic = new System.Windows.Forms.DateTimePicker();
+            this.dtpBaslangic = new VetTakip.RadiusDateTimePicker();
             this.lblSure = new System.Windows.Forms.Label();
-            this.cmbSure = new System.Windows.Forms.ComboBox();
+            this.cmbSure = new VetTakip.RadiusComboBox();
             this.lblIslem = new System.Windows.Forms.Label();
-            this.txtIslem = new System.Windows.Forms.TextBox();
+            this.txtIslem = new RadiusTextBox();
             this.lblHata = new System.Windows.Forms.Label();
             this.btnIptal = new RadiusButton();
             this.btnKaydet = new RadiusButton();
@@ -68,13 +68,22 @@
             // 
             // cmbHasta
             // 
-            this.cmbHasta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbHasta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbHasta.FormattingEnabled = true;
+            this.cmbHasta.BackColor = System.Drawing.Color.White;
+            this.cmbHasta.BorderColor = System.Drawing.Color.Gray;
+            this.cmbHasta.BorderRadius = 12;
+            this.cmbHasta.BorderSize = 1;
+            this.cmbHasta.DataSource = null;
+            this.cmbHasta.DisplayMember = "";
+            this.cmbHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHasta.Location = new System.Drawing.Point(23, 76);
             this.cmbHasta.Name = "cmbHasta";
-            this.cmbHasta.Size = new System.Drawing.Size(390, 26);
+            this.cmbHasta.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.cmbHasta.SelectedIndex = -1;
+            this.cmbHasta.SelectedItem = null;
+            this.cmbHasta.SelectedValue = null;
+            this.cmbHasta.Size = new System.Drawing.Size(390, 32);
             this.cmbHasta.TabIndex = 2;
+            this.cmbHasta.ValueMember = "";
             // 
             // lblHekim
             // 
@@ -88,12 +97,22 @@
             // 
             // cmbHekim
             // 
+            this.cmbHekim.BackColor = System.Drawing.Color.White;
+            this.cmbHekim.BorderColor = System.Drawing.Color.Gray;
+            this.cmbHekim.BorderRadius = 12;
+            this.cmbHekim.BorderSize = 1;
+            this.cmbHekim.DataSource = null;
+            this.cmbHekim.DisplayMember = "";
             this.cmbHekim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbHekim.FormattingEnabled = true;
             this.cmbHekim.Location = new System.Drawing.Point(23, 139);
             this.cmbHekim.Name = "cmbHekim";
-            this.cmbHekim.Size = new System.Drawing.Size(390, 26);
+            this.cmbHekim.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.cmbHekim.SelectedIndex = -1;
+            this.cmbHekim.SelectedItem = null;
+            this.cmbHekim.SelectedValue = null;
+            this.cmbHekim.Size = new System.Drawing.Size(390, 32);
             this.cmbHekim.TabIndex = 4;
+            this.cmbHekim.ValueMember = "";
             // 
             // lblTarih
             // 
@@ -107,12 +126,16 @@
             // 
             // dtpTarih
             // 
+            this.dtpTarih.BorderColor = System.Drawing.Color.Gray;
+            this.dtpTarih.BorderRadius = 12;
+            this.dtpTarih.BorderSize = 1;
             this.dtpTarih.CustomFormat = "dd MMM yyyy, ddd";
             this.dtpTarih.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dtpTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTarih.Location = new System.Drawing.Point(23, 202);
+            this.dtpTarih.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtpTarih.Name = "dtpTarih";
-            this.dtpTarih.Size = new System.Drawing.Size(390, 25);
+            this.dtpTarih.Size = new System.Drawing.Size(390, 32);
             this.dtpTarih.TabIndex = 6;
             // 
             // lblBaslangic
@@ -127,12 +150,17 @@
             // 
             // dtpBaslangic
             // 
+            this.dtpBaslangic.BorderColor = System.Drawing.Color.Gray;
+            this.dtpBaslangic.BorderRadius = 12;
+            this.dtpBaslangic.BorderSize = 1;
             this.dtpBaslangic.CustomFormat = "HH:mm";
+            this.dtpBaslangic.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.dtpBaslangic.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBaslangic.Location = new System.Drawing.Point(23, 263);
+            this.dtpBaslangic.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtpBaslangic.Name = "dtpBaslangic";
             this.dtpBaslangic.ShowUpDown = true;
-            this.dtpBaslangic.Size = new System.Drawing.Size(390, 24);
+            this.dtpBaslangic.Size = new System.Drawing.Size(390, 32);
             this.dtpBaslangic.TabIndex = 8;
             // 
             // lblSure
@@ -147,8 +175,13 @@
             // 
             // cmbSure
             // 
+            this.cmbSure.BackColor = System.Drawing.Color.White;
+            this.cmbSure.BorderColor = System.Drawing.Color.Gray;
+            this.cmbSure.BorderRadius = 12;
+            this.cmbSure.BorderSize = 1;
+            this.cmbSure.DataSource = null;
+            this.cmbSure.DisplayMember = "";
             this.cmbSure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSure.FormattingEnabled = true;
             this.cmbSure.Items.AddRange(new object[] {
             "15 dk",
             "30 dk",
@@ -158,8 +191,13 @@
             "120 dk"});
             this.cmbSure.Location = new System.Drawing.Point(23, 324);
             this.cmbSure.Name = "cmbSure";
-            this.cmbSure.Size = new System.Drawing.Size(390, 26);
+            this.cmbSure.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.cmbSure.SelectedIndex = -1;
+            this.cmbSure.SelectedItem = null;
+            this.cmbSure.SelectedValue = null;
+            this.cmbSure.Size = new System.Drawing.Size(390, 32);
             this.cmbSure.TabIndex = 10;
+            this.cmbSure.ValueMember = "";
             // 
             // lblIslem
             // 
@@ -173,15 +211,25 @@
             // 
             // txtIslem
             // 
+            this.txtIslem.BackColor = System.Drawing.Color.White;
+            this.txtIslem.BorderColor = System.Drawing.Color.Gray;
+            this.txtIslem.BorderRadius = 12;
+            this.txtIslem.BorderSize = 1;
             this.txtIslem.Location = new System.Drawing.Point(23, 387);
+            this.txtIslem.MaxLength = 32767;
+            this.txtIslem.Multiline = false;
             this.txtIslem.Name = "txtIslem";
-            this.txtIslem.Size = new System.Drawing.Size(390, 24);
+            this.txtIslem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtIslem.PasswordChar = '\0';
+            this.txtIslem.PlaceholderText = "";
+            this.txtIslem.Size = new System.Drawing.Size(390, 32);
             this.txtIslem.TabIndex = 12;
+            this.txtIslem.UseSystemPasswordChar = false;
             // 
             // lblHata
             // 
             this.lblHata.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.lblHata.Location = new System.Drawing.Point(23, 414);
+            this.lblHata.Location = new System.Drawing.Point(22, 422);
             this.lblHata.Name = "lblHata";
             this.lblHata.Size = new System.Drawing.Size(395, 29);
             this.lblHata.TabIndex = 13;
@@ -195,6 +243,8 @@
             this.btnIptal.ButtonColor = System.Drawing.Color.White;
             this.btnIptal.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("btnIptal.ButtonIcon")));
             this.btnIptal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIptal.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.btnIptal.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnIptal.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnIptal.HoverIcon = ((System.Drawing.Image)(resources.GetObject("btnIptal.HoverIcon")));
             this.btnIptal.IconLocation = IconPosition.Left;
@@ -221,6 +271,8 @@
             this.btnKaydet.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(118)))), ((int)(((byte)(110)))));
             this.btnKaydet.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ButtonIcon")));
             this.btnKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKaydet.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.btnKaydet.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnKaydet.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnKaydet.HoverIcon = null;
             this.btnKaydet.IconLocation = IconPosition.Left;
@@ -270,7 +322,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Randevu Oluştur";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
     }
 
@@ -278,19 +329,19 @@
 
     private System.Windows.Forms.Label lblBaslik;
     private System.Windows.Forms.Label lblHasta;
-    private System.Windows.Forms.ComboBox cmbHasta;
+    private VetTakip.RadiusComboBox cmbHasta;
     private System.Windows.Forms.Label lblHekim;
-    private System.Windows.Forms.ComboBox cmbHekim;
+    private VetTakip.RadiusComboBox cmbHekim;
     private System.Windows.Forms.Label lblTarih;
-    private System.Windows.Forms.DateTimePicker dtpTarih;
+    private VetTakip.RadiusDateTimePicker dtpTarih;
     private System.Windows.Forms.Label lblBaslangic;
-    private System.Windows.Forms.DateTimePicker dtpBaslangic;
+    private VetTakip.RadiusDateTimePicker dtpBaslangic;
     private System.Windows.Forms.Label lblSure;
-    private System.Windows.Forms.ComboBox cmbSure;
+    private VetTakip.RadiusComboBox cmbSure;
     private System.Windows.Forms.Label lblIslem;
-    private System.Windows.Forms.TextBox txtIslem;
+    private RadiusTextBox txtIslem;
     private System.Windows.Forms.Label lblHata;
-        private RadiusButton btnKaydet;
-        private RadiusButton btnIptal;
-    }
+    private RadiusButton btnKaydet;
+    private RadiusButton btnIptal;
+  }
 }

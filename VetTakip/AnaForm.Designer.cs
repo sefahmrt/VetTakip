@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
             this.UstPanel = new RoundedPanel();
             this.ProfilPanel = new RoundedPanel();
+            this.ProfilLogoPicture = new System.Windows.Forms.PictureBox();
             this.YetkiLbl = new System.Windows.Forms.Label();
             this.AdSoyadLbl = new System.Windows.Forms.Label();
-            this.ProfilLogoPicture = new System.Windows.Forms.PictureBox();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,6 +90,16 @@
             this.ProfilPanel.Size = new System.Drawing.Size(328, 100);
             this.ProfilPanel.TabIndex = 4;
             // 
+            // ProfilLogoPicture
+            // 
+            this.ProfilLogoPicture.Location = new System.Drawing.Point(20, 20);
+            this.ProfilLogoPicture.Margin = new System.Windows.Forms.Padding(0);
+            this.ProfilLogoPicture.Name = "ProfilLogoPicture";
+            this.ProfilLogoPicture.Size = new System.Drawing.Size(60, 60);
+            this.ProfilLogoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ProfilLogoPicture.TabIndex = 0;
+            this.ProfilLogoPicture.TabStop = false;
+            // 
             // YetkiLbl
             // 
             this.YetkiLbl.AutoSize = true;
@@ -116,16 +126,6 @@
             this.AdSoyadLbl.TabIndex = 2;
             this.AdSoyadLbl.Text = "Deniz Aslan Yılmaz Koç";
             this.AdSoyadLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ProfilLogoPicture
-            // 
-            this.ProfilLogoPicture.Location = new System.Drawing.Point(20, 20);
-            this.ProfilLogoPicture.Margin = new System.Windows.Forms.Padding(0);
-            this.ProfilLogoPicture.Name = "ProfilLogoPicture";
-            this.ProfilLogoPicture.Size = new System.Drawing.Size(60, 60);
-            this.ProfilLogoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ProfilLogoPicture.TabIndex = 0;
-            this.ProfilLogoPicture.TabStop = false;
             // 
             // panelLogo
             // 
@@ -228,6 +228,8 @@
             this.AnaSayfaBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.AnaSayfaBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("AnaSayfaBtn.ButtonIcon")));
             this.AnaSayfaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AnaSayfaBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.AnaSayfaBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.AnaSayfaBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AnaSayfaBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("AnaSayfaBtn.HoverIcon")));
             this.AnaSayfaBtn.IconLocation = IconPosition.Left;
@@ -255,6 +257,8 @@
             this.RandevularBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.RandevularBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("RandevularBtn.ButtonIcon")));
             this.RandevularBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RandevularBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.RandevularBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.RandevularBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.RandevularBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("RandevularBtn.HoverIcon")));
             this.RandevularBtn.IconLocation = IconPosition.Left;
@@ -282,6 +286,8 @@
             this.HatirlatmaBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.HatirlatmaBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("HatirlatmaBtn.ButtonIcon")));
             this.HatirlatmaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HatirlatmaBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.HatirlatmaBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.HatirlatmaBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HatirlatmaBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("HatirlatmaBtn.HoverIcon")));
             this.HatirlatmaBtn.IconLocation = IconPosition.Left;
@@ -309,6 +315,8 @@
             this.TakvimBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.TakvimBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("TakvimBtn.ButtonIcon")));
             this.TakvimBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TakvimBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TakvimBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.TakvimBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TakvimBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("TakvimBtn.HoverIcon")));
             this.TakvimBtn.IconLocation = IconPosition.Left;
@@ -336,6 +344,8 @@
             this.SahiplerBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.SahiplerBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("SahiplerBtn.ButtonIcon")));
             this.SahiplerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SahiplerBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.SahiplerBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.SahiplerBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SahiplerBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("SahiplerBtn.HoverIcon")));
             this.SahiplerBtn.IconLocation = IconPosition.Left;
@@ -363,6 +373,8 @@
             this.MesajlarBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.MesajlarBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("MesajlarBtn.ButtonIcon")));
             this.MesajlarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MesajlarBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MesajlarBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.MesajlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.MesajlarBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("MesajlarBtn.HoverIcon")));
             this.MesajlarBtn.IconLocation = IconPosition.Left;
@@ -390,6 +402,8 @@
             this.AyarlarBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.AyarlarBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("AyarlarBtn.ButtonIcon")));
             this.AyarlarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AyarlarBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.AyarlarBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.AyarlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AyarlarBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("AyarlarBtn.HoverIcon")));
             this.AyarlarBtn.IconLocation = IconPosition.Left;
@@ -417,6 +431,8 @@
             this.HayvanlarBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.HayvanlarBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("HayvanlarBtn.ButtonIcon")));
             this.HayvanlarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HayvanlarBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.HayvanlarBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.HayvanlarBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HayvanlarBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("HayvanlarBtn.HoverIcon")));
             this.HayvanlarBtn.IconLocation = IconPosition.Left;
@@ -444,6 +460,8 @@
             this.YataklıHBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.YataklıHBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("YataklıHBtn.ButtonIcon")));
             this.YataklıHBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.YataklıHBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.YataklıHBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.YataklıHBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.YataklıHBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("YataklıHBtn.HoverIcon")));
             this.YataklıHBtn.IconLocation = IconPosition.Left;
@@ -471,6 +489,8 @@
             this.MuayeneBtn.ButtonColor = System.Drawing.Color.Transparent;
             this.MuayeneBtn.ButtonIcon = ((System.Drawing.Image)(resources.GetObject("MuayeneBtn.ButtonIcon")));
             this.MuayeneBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MuayeneBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MuayeneBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.MuayeneBtn.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.MuayeneBtn.HoverIcon = ((System.Drawing.Image)(resources.GetObject("MuayeneBtn.HoverIcon")));
             this.MuayeneBtn.IconLocation = IconPosition.Left;
@@ -516,7 +536,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "E_Pet_Desk";
+            this.Text = "VetTakip";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.UstPanel.ResumeLayout(false);
             this.UstPanel.PerformLayout();

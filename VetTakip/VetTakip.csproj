@@ -7,7 +7,7 @@
     <ProjectGuid>{A855438D-3B91-4951-8B78-9A59DD544F49}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>VetTakip</RootNamespace>
-    <AssemblyName>e_pet_desk_deneme1</AssemblyName>
+    <AssemblyName>VetTakip</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

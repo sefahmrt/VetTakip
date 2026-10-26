@@ -286,10 +286,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.roundedPanel1);
             this.Font = new System.Drawing.Font("Inter", 15F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "GirisForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GirisForm";
+            this.Text = "Giris Paneli";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galeri1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galeri2)).EndInit();

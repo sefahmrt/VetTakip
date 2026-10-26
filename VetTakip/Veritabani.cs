@@ -26,6 +26,7 @@ namespace VetTakip
                 b.DataSource = DosyaYolu;
                 b.Version = 3;
                 b.ForeignKeys = true;      // tablolar arası ilişkiler (REFERENCES) denetlensin
+                b.Pooling = true;          // bağlantılar havuzdan alınır, her seferinde sıfırdan açılmaz
                 b.FailIfMissing = true;    // dosya yoksa boş veritabanı oluşturup "no such table" hatası vermesin
                 return b.ConnectionString;
             }

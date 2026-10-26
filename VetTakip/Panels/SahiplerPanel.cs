@@ -15,8 +15,6 @@ namespace VetTakip
 {
     public partial class SahiplerPanel : UserControl
     {
-        // Pooling=True: bağlantı her seferinde sıfırdan açılmaz, havuzdan alınır.
-        private const string BaglantiYolu = @"Data Source=vettakip.db;Version=3;Pooling=True;";
 
         private const string ListeSorgusu = @"
             SELECT
@@ -156,9 +154,8 @@ namespace VetTakip
             try
             {
                 IndeksleriHazirla();
-                using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+                using (SQLiteConnection baglanti = Veritabani.Ac())
                 {
-                    baglanti.Open();
                     using (SQLiteCommand komut = new SQLiteCommand("SELECT 1", baglanti))
                         komut.ExecuteScalar();
                 }
@@ -269,9 +266,8 @@ namespace VetTakip
 
                 try
                 {
-                    using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+                    using (SQLiteConnection baglanti = Veritabani.Ac())
                     {
-                        baglanti.Open();
                         string sql = @"
                             CREATE INDEX IF NOT EXISTS idx_hasta_musteri  ON hasta(musteri_id);
                             CREATE INDEX IF NOT EXISTS idx_muayene_hasta  ON muayene(hasta_id, tarih);
@@ -292,7 +288,7 @@ namespace VetTakip
             IndeksleriHazirla();
 
             var tablo = new DataTable { Locale = Tr };
-            using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+            using (SQLiteConnection baglanti = Veritabani.Ac())
             using (SQLiteDataAdapter adaptor = new SQLiteDataAdapter(ListeSorgusu, baglanti))
             {
                 adaptor.Fill(tablo);
@@ -304,9 +300,8 @@ namespace VetTakip
         {
             var veri = new DetayVerisi { Musteri = new DataTable(), Hayvanlar = new DataTable() };
 
-            using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+            using (SQLiteConnection baglanti = Veritabani.Ac())
             {
-                baglanti.Open();
 
                 using (var adaptor = new SQLiteDataAdapter("SELECT * FROM musteri WHERE id = @id", baglanti))
                 {
@@ -326,7 +321,7 @@ namespace VetTakip
         private static DataTable ZiyaretTablosuGetir(int id)
         {
             var tablo = new DataTable();
-            using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+            using (SQLiteConnection baglanti = Veritabani.Ac())
             using (var adaptor = new SQLiteDataAdapter(ZiyaretSorgusu, baglanti))
             {
                 adaptor.SelectCommand.Parameters.AddWithValue("@id", id);
@@ -897,9 +892,8 @@ namespace VetTakip
 
             try
             {
-                using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+                using (SQLiteConnection baglanti = Veritabani.Ac())
                 {
-                    baglanti.Open();
                     using (SQLiteCommand komut = new SQLiteCommand("UPDATE musteri SET aktif = @aktif WHERE id = @id", baglanti))
                     {
                         komut.Parameters.AddWithValue("@aktif", pasifeAl ? 0 : 1);

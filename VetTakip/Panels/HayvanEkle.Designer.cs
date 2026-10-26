@@ -1,6 +1,4 @@
-﻿using System.Windows.Controls;
-
-namespace VetTakip
+﻿namespace VetTakip
 {
   partial class HayvanEkle
   {

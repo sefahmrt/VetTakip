@@ -6,7 +6,6 @@ namespace VetTakip
 {
   public partial class YeniSahip : Form
   {
-    private const string BaglantiYolu = @"Data Source=vettakip.db;Version=3;";
 
     public YeniSahip()
     {
@@ -23,9 +22,8 @@ namespace VetTakip
 
       try
       {
-        using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+        using (SQLiteConnection baglanti = Veritabani.Ac())
         {
-          baglanti.Open();
           string sorgu = @"INSERT INTO musteri (ad, soyad, tel, tc, eposta, il, ilce, adres, acil_kisi, acil_tel, sms_izni) 
                                      VALUES (@ad, @soyad, @tel, @tc, @eposta, @il, @ilce, @adres, @acil_kisi, @acil_tel, @sms_izni)";
 

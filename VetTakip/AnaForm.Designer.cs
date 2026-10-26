@@ -532,6 +532,7 @@
             this.Controls.Add(this.MenuSidePanel);
             this.Controls.Add(this.panelContainer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AnaForm";

@@ -174,6 +174,7 @@
             this.sifreTxt.BorderRadius = 10;
             this.sifreTxt.BorderSize = 1;
             this.sifreTxt.Location = new System.Drawing.Point(52, 275);
+            this.sifreTxt.MaxLength = 32767;
             this.sifreTxt.Multiline = false;
             this.sifreTxt.Name = "sifreTxt";
             this.sifreTxt.Padding = new System.Windows.Forms.Padding(15, 13, 15, 0);
@@ -190,6 +191,7 @@
             this.kAdiTxt.BorderRadius = 10;
             this.kAdiTxt.BorderSize = 1;
             this.kAdiTxt.Location = new System.Drawing.Point(52, 160);
+            this.kAdiTxt.MaxLength = 32767;
             this.kAdiTxt.Multiline = false;
             this.kAdiTxt.Name = "kAdiTxt";
             this.kAdiTxt.Padding = new System.Windows.Forms.Padding(15, 13, 15, 0);
@@ -286,6 +288,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.roundedPanel1);
             this.Font = new System.Drawing.Font("Inter", 15F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "GirisForm";

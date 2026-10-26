@@ -56,6 +56,8 @@
             this.TamamlananRandevuLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sahiplerPanel1 = new VetTakip.SahiplerPanel();
+            this.AltPanel2.SuspendLayout();
             this.OrtaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.UstPanel4.SuspendLayout();
@@ -81,8 +83,10 @@
             // 
             // AltPanel2
             // 
+            this.AltPanel2.AutoScroll = true;
             this.AltPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AltPanel2.BackgroundImage")));
             this.AltPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AltPanel2.Controls.Add(this.sahiplerPanel1);
             this.AltPanel2.Location = new System.Drawing.Point(661, 574);
             this.AltPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.AltPanel2.Name = "AltPanel2";
@@ -403,6 +407,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // sahiplerPanel1
+            // 
+            this.sahiplerPanel1.AutoScroll = true;
+            this.sahiplerPanel1.AutoSize = true;
+            this.sahiplerPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.sahiplerPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.sahiplerPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sahiplerPanel1.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sahiplerPanel1.Location = new System.Drawing.Point(10, 10);
+            this.sahiplerPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.sahiplerPanel1.Name = "sahiplerPanel1";
+            this.sahiplerPanel1.Padding = new System.Windows.Forms.Padding(15, 17, 15, 17);
+            this.sahiplerPanel1.Size = new System.Drawing.Size(530, 290);
+            this.sahiplerPanel1.TabIndex = 0;
+            // 
             // AnaPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -420,6 +439,8 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "AnaPanel";
             this.Size = new System.Drawing.Size(1622, 891);
+            this.AltPanel2.ResumeLayout(false);
+            this.AltPanel2.PerformLayout();
             this.OrtaPanel.ResumeLayout(false);
             this.OrtaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -467,5 +488,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button TakvimeGit;
+        private SahiplerPanel sahiplerPanel1;
     }
 }

@@ -7,7 +7,6 @@ namespace VetTakip
 {
     public partial class HayvanEkle : Form
     {
-        private const string BaglantiYolu = @"Data Source=vettakip.db;Version=3;";
         private int musteriId;
 
         public HayvanEkle(int musteriId)
@@ -20,14 +19,17 @@ namespace VetTakip
         {
             cmbCinsiyet.Items.AddRange(new string[] { "Erkek", "Dişi" });
             cmbCinsiyet.SelectedIndex = 0;
-            TurleriYukle();
+            try { TurleriYukle(); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Veritabani.HataMetni(ex), "Veritabanı hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void TurleriYukle()
         {
-            using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+            using (SQLiteConnection baglanti = Veritabani.Ac())
             {
-                baglanti.Open();
                 using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT id, ad FROM tur", baglanti))
                 {
                     DataTable dt = new DataTable();
@@ -44,9 +46,8 @@ namespace VetTakip
             if (cmbTur.SelectedValue != null && (cmbTur.SelectedValue is long || cmbTur.SelectedValue is int))
             {
                 int turId = Convert.ToInt32(cmbTur.SelectedValue);
-                using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+                using (SQLiteConnection baglanti = Veritabani.Ac())
                 {
-                    baglanti.Open();
                     using (SQLiteCommand cmd = new SQLiteCommand("SELECT id, ad FROM irk WHERE tur_id = @tur_id", baglanti))
                     {
                         cmd.Parameters.AddWithValue("@tur_id", turId);
@@ -80,9 +81,8 @@ namespace VetTakip
 
             try
             {
-                using (SQLiteConnection baglanti = new SQLiteConnection(BaglantiYolu))
+                using (SQLiteConnection baglanti = Veritabani.Ac())
                 {
-                    baglanti.Open();
                     string sorgu = @"INSERT INTO hasta (musteri_id, ad, tur_id, irk_id, cinsiyet, dogum_tarihi, renk, mikrocip_no, kisir, agresif) 
                                      VALUES (@musteri, @ad, @tur, @irk, @cinsiyet, @dogum, @renk, @cip, @kisir, @agresif)";
 

@@ -16,11 +16,10 @@ namespace VetTakip
             InitializeComponent();
             AdSoyadLbl.Text = GirisForm.AdSoyad;
             YetkiLbl.Text = GirisForm.Yetki;
-            MenuButonunaTiklandi(AnaSayfaBtn, new AnaPanel()); // açılışta Ana Sayfa seçili gelsin
             Version surum = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             this.Text = "E_Pet_Desk Alpha - v" + surum.ToString();
             lblSurum.Text = "Alpha - v" + surum.ToString();
-            MenuButonunaTiklandi(AnaSayfaBtn, AnaPanelOlustur());
+            MenuButonunaTiklandi(AnaSayfaBtn, AnaPanelOlustur()); // açılışta Ana Sayfa seçili gelsin
             ProfilLogosuOlustur();
         }
 

@@ -52,8 +52,6 @@ namespace VetTakip
 
         private void RandevulariListele()
         {
-            string baglantiYolu = @"Data Source=vettakip.db;Version=3;";
-
             // İkonların neye göre seçileceğini bilmek için has.tur AS 'Tür' eklendi
             string sorgu = @"
                 SELECT 
@@ -73,11 +71,11 @@ namespace VetTakip
                 ORDER BY r.baslangic ASC;
             ";
 
-            using (SQLiteConnection baglanti = new SQLiteConnection(baglantiYolu))
+            try
             {
+                using (SQLiteConnection baglanti = Veritabani.Ac())
                 using (SQLiteDataAdapter adaptor = new SQLiteDataAdapter(sorgu, baglanti))
                 {
-                    try
                     {
                         DataTable tablo = new DataTable();
                         adaptor.Fill(tablo);
@@ -112,12 +110,12 @@ namespace VetTakip
                         // İkon sütununun boyutunu sabitlemek için (çok genişlemesini önler)
                         dataGridView1.Columns["Ikon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                     }
-                    catch (Exception hata)
-                    {
-                        MessageBox.Show("Randevular listelenirken bir hata oluştu:\n" + hata.Message,
-                                        "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Randevular listelenirken bir hata oluştu:\n" + Veritabani.HataMetni(hata),
+                                "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -159,27 +157,25 @@ namespace VetTakip
 
         private void BugunkuRandevuSayisiniGoster()
         {
-            string baglantiYolu = @"Data Source=vettakip.db;Version=3;";
             string sorgu = "SELECT COUNT(*) FROM randevu WHERE DATE(baslangic) = DATE('now', 'localtime');";
 
-            using (SQLiteConnection baglanti = new SQLiteConnection(baglantiYolu))
+            try
             {
+                using (SQLiteConnection baglanti = Veritabani.Ac())
                 using (SQLiteCommand komut = new SQLiteCommand(sorgu, baglanti))
                 {
-                    try
                     {
-                        baglanti.Open();
                         // ExecuteScalar sorgudan dönen tek bir değeri (sayıyı) alır
                         int toplamRandevu = Convert.ToInt32(komut.ExecuteScalar());
 
                         // Label'ın textine yazdırıyoruz
                         BgnkRandevulLbl.Text = toplamRandevu.ToString();
                     }
-                    catch (Exception hata)
-                    {
-                        MessageBox.Show("Hata: " + hata.Message);
-                    }
                 }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Hata: " + Veritabani.HataMetni(hata));
             }
         }
 

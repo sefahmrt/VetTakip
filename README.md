@@ -1,6 +1,7 @@
 <div align="center">
-
-# 🐾 VetTakip
+<img src="docs/screenshots/vettakip.ico" width="10%"/>
+  
+# VetTakip
 
 **Veteriner Klinik Takip Sistemi**
 
@@ -8,14 +9,13 @@ Randevuları, hasta sahiplerini ve hayvan kayıtlarını tek bir masaüstü uygu
 
 🎓 *Üniversite dönem projesi olarak geliştirilmektedir.*
 
-[![Sürüm](https://img.shields.io/badge/sürüm-v0.1.0.0--alpha-orange?style=for-the-badge)](https://github.com/sefahmrt/VetTakip/releases)
+[![Sürüm](https://img.shields.io/badge/sürüm-v0.1--alpha-orange?style=for-the-badge)](https://github.com/sefahmrt/VetTakip/releases)
 [![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://learn.microsoft.com/dotnet/csharp/)
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#-kurulum)
 
 [📥 İndir](#-indir) • [✨ Özellikler](#-özellikler) • [📸 Ekran Görüntüleri](#-ekran-görüntüleri) • [🚀 Kurulum](#-kurulum) • [👥 Ekip](#-ekip)
 
-<img src="docs/screenshots/ana-sayfa.png" width="90%" alt="VetTakip Ana Sayfa" />
 
 </div>
 
@@ -33,7 +33,7 @@ Bu proje, **Ondokuz Mayıs Üniversitesi Bafra MYO** **Bilgisayar Programcılı�
 
 <div align="center">
 
-[![İndir](https://img.shields.io/badge/⬇️%20VetTakip%20v0.1--alpha%20İndir-1f6feb?style=for-the-badge)](https://github.com/sefahmrt/VetTakip/releases/download/Release/VetTakip.v0.1-alpha.zip)
+[![İndir](https://img.shields.io/badge/⬇️%20VetTakip%20v0.1--alpha%20İndir-1f6feb?style=for-the-badge)](https://github.com/sefahmrt/VetTakip/releases/download/v0.1-alpha/VetTakip.v0.1-alpha.zip)
 
 </div>
 

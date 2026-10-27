@@ -132,22 +132,6 @@ git clone https://github.com/sefahmrt/VetTakip.git
 >
 > ℹ️ Proje klasik .NET Framework (WinForms) projesidir; `dotnet run` ile değil Visual Studio (veya MSBuild) ile derlenir.
 
-## 🗄️ Veritabanı
-
-Uygulama, exe'nin yanındaki `vettakip.db` SQLite dosyasını kullanır. Tüm ekranlar bağlantıyı tek yerden, `Veritabani.Ac()` üzerinden alır.
-
-```mermaid
-erDiagram
-    musteri ||--o{ hasta : "sahip"
-    tur ||--o{ irk : "içerir"
-    tur ||--o{ hasta : "türü"
-    irk ||--o{ hasta : "ırkı"
-    hasta ||--o{ randevu : "alır"
-    hekim ||--o{ randevu : "bakar"
-    hasta ||--o{ muayene : "olur"
-```
-
-`kullanici` tablosu giriş bilgilerini tutar.
 
 ## 📂 Proje Yapısı
 

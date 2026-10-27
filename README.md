@@ -10,12 +10,12 @@ Randevuları, hasta sahiplerini ve hayvan kayıtlarını tek bir masaüstü uygu
 🎓 *Üniversite dönem projesi olarak geliştirilmektedir.*
 
 [![Sürüm](https://img.shields.io/badge/sürüm-v0.1--alpha-orange?style=for-the-badge)](https://github.com/sefahmrt/VetTakip/releases)
-[![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.8-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://learn.microsoft.com/dotnet/csharp/)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#-kurulum)
 
-[📥 İndir](#-indir) • [✨ Özellikler](#-özellikler) • [📸 Ekran Görüntüleri](#-ekran-görüntüleri) • [🚀 Kurulum](#-kurulum) • [👥 Ekip](#-ekip)
-
+[📥 İndir](#-indir) • [✨ Özellikler](#-özellikler) • [📸 Ekran Görüntüleri](#-ekran-görüntüleri) • [🚀 Kurulum](#-kurulum) • [🗄️ Veritabanı](#️-veritabanı) • [👥 Ekip](#-ekip)
 
 </div>
 
@@ -99,11 +99,13 @@ Bu proje, **Ondokuz Mayıs Üniversitesi Bafra MYO** **Bilgisayar Programcılı�
 
 ## 🛠️ Teknolojiler
 
-- **Dil:** C#
-- **Platform:** .NET (Windows masaüstü uygulaması)
-- **IDE:** Visual Studio 2022+
-
-<!-- Arayüz kütüphanesi (WinForms / WPF vb.) ve veritabanını buraya ekleyin -->
+| Katman | Teknoloji |
+|---|---|
+| Dil | C# |
+| Arayüz | Windows Forms (özel `Radius*` yuvarlak köşeli kontroller) |
+| Çatı | .NET Framework 4.8 |
+| Veritabanı | SQLite ([System.Data.SQLite.Core](https://www.nuget.org/packages/System.Data.SQLite.Core) 1.0.119) |
+| IDE | Visual Studio 2022 veya üzeri |
 
 ## 🚀 Kurulum
 
@@ -112,36 +114,56 @@ Projeyi kaynak koddan çalıştırmak için:
 ### Gereksinimler
 
 - Windows 10 / 11
-- [.NET SDK](https://dotnet.microsoft.com/download)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/) veya güncel sürüm
+- [Visual Studio 2022](https://visualstudio.microsoft.com/) veya üzeri (**".NET masaüstü geliştirme"** iş yükü kurulu olmalı)
+- .NET Framework 4.8 Developer Pack
 
 ### Adımlar
 
 ```bash
 # 1. Depoyu klonlayın
 git clone https://github.com/sefahmrt/VetTakip.git
-
-# 2. Proje klasörüne girin
-cd VetTakip
-
-# 3. Bağımlılıkları yükleyin
-dotnet restore
-
-# 4. Derleyin ve çalıştırın
-dotnet run --project VetTakip
 ```
 
-Alternatif olarak `VetTakip.slnx` dosyasını Visual Studio ile açıp **F5** tuşuna basabilirsiniz.
+2. `VetTakip.slnx` dosyasını Visual Studio ile açın.
+3. Üst çubuktan platformu **x64** olarak seçin.
+4. NuGet paketleri ilk derlemede otomatik yüklenir. **F5** ile çalıştırın.
+
+> 💡 Veritabanı (`VetTakip/vettakip.db`) projeyle birlikte gelir ve her derlemede çıktı klasörüne (`bin\x64\Debug`) kopyalanır. Ek bir kurulum gerekmez.
+>
+> ℹ️ Proje klasik .NET Framework (WinForms) projesidir; `dotnet run` ile değil Visual Studio (veya MSBuild) ile derlenir.
+
+## 🗄️ Veritabanı
+
+Uygulama, exe'nin yanındaki `vettakip.db` SQLite dosyasını kullanır. Tüm ekranlar bağlantıyı tek yerden, `Veritabani.Ac()` üzerinden alır.
+
+```mermaid
+erDiagram
+    musteri ||--o{ hasta : "sahip"
+    tur ||--o{ irk : "içerir"
+    tur ||--o{ hasta : "türü"
+    irk ||--o{ hasta : "ırkı"
+    hasta ||--o{ randevu : "alır"
+    hekim ||--o{ randevu : "bakar"
+    hasta ||--o{ muayene : "olur"
+```
+
+`kullanici` tablosu giriş bilgilerini tutar.
 
 ## 📂 Proje Yapısı
 
 ```
 VetTakip/
-├── VetTakip/          # Uygulama kaynak kodu
-├── docs/screenshots/  # README görselleri
-├── VetTakip.slnx      # Visual Studio çözüm dosyası
-├── .gitattributes
-├── .gitignore
+├── VetTakip/
+│   ├── Panels/          # Ana sayfa, Sahipler, Randevular, Hayvan/Sahip ekleme ekranları
+│   ├── Takvim/          # Hekim bazlı günlük randevu takvimi
+│   ├── UserControls/    # Özel yuvarlak köşeli kontroller (RadiusButton, RadiusTextBox, ...)
+│   ├── Resources/       # Simgeler ve görseller
+│   ├── GirisForm.cs     # Giriş ekranı
+│   ├── AnaForm.cs       # Ana pencere ve menü
+│   ├── Veritabani.cs    # Ortak SQLite bağlantısı
+│   └── vettakip.db      # SQLite veritabanı
+├── docs/screenshots/    # README görselleri
+├── VetTakip.slnx        # Visual Studio çözüm dosyası
 └── README.md
 ```
 
@@ -160,11 +182,7 @@ VetTakip/
 - [ ] Takvim
 - [ ] Ayarlar
 
-<!-- Tamamlanan maddeleri [x] yaparak güncel tutun -->
-
 ## 👥 Ekip
-
-<!-- Ekip arkadaşlarınızın bilgilerini ekleyin -->
 
 | Üye | Rol | GitHub |
 |---|---|---|
@@ -185,8 +203,6 @@ VetTakip/
 Bir hata mı buldunuz? [Yeni bir issue açın](https://github.com/sefahmrt/VetTakip/issues/new) ve hatanın açıklamasını, tekrar üretme adımlarını ve varsa ekran görüntüsünü ekleyin.
 
 ## 📄 Lisans
-
-<!-- LICENSE dosyası eklediğinizde burayı güncelleyin -->
 
 Bu proje için henüz bir lisans belirtilmemiştir.
 
